@@ -46,3 +46,6 @@ end
 
 #Zurb
 gem 'zurb-foundation'
+
+#Font Awesome
+gem 'font-awesome-rails'
