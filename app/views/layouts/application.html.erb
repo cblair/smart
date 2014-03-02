@@ -1,14 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Smart</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
-<%= yield %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-</body>
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "SMART - R2 Transit" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!-- Header and Nav -->
+ 
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <h1>SMART - Transit</h1>
+        </div>
+      </div>
+    </div>
+    <!-- End Header and Nav -->
+    <div class="row">
+   <!-- Nav Sidebar -->
+      <!-- This is source ordered to be pulled to the left on larger screens -->
+      <div class="large-3 columns ">
+        <div class="panel">
+            <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+              <section class="section">
+                <h5 class="title"><a href="#">Home</a></h5>
+              </section>
+              <br>
+              <section class="section">
+                <h5 class="title"><a href="#">Contact</a></h5>
+              </section>
+              <br>
+              <section class="section">
+                <h5 class="title"><a href="#">Directions</a></h5>
+              </section>
+              <br>
+              <section class="section">
+                <h5 class="title"><a href="#">Service</a></h5>
+              </section>
+              <br>
+              <section class="section">
+                <h5 class="title"><a href="#">How to travel</a></h5>
+              </section>
+              <br>
+              <section class="section">
+                <h5 class="title"><a href="#">Employment</a></h5>
+              </section>
+          </div>
+   
+        </div>
+      </div>
+      
+      <!-- Main Feed -->
+      <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+      <div class="large-9 columns">
+        <div class="panel">
+          <h4 class="hide-for-small">Rider Alerts<hr/></h4>
+          <h5 class="subheader">Live services and social media feeds.</h5>
+        </div>
+
+        <div class="row">
+          <div class="large-6 small-6 columns">
+            <div class="panel">
+              <h5>Moscow Fixed Rate</h5>
+              <h5>Fare Free</h5>
+              <ul>
+                <li>Schedule (pdf)</li>
+                <li>How to / rules</li>
+                <li>Idaho 511</li>
+                <li>Google Transit</li>
+                <li>Bing Transit</li>
+                <li>Closures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="large-6 small-6 columns">
+            <div class="panel">
+              <h5>Dial a Ride</h5>
+              <ul>
+                <li>Guide / How To</li>
+                <li>ADA Priority</li>
+                <li>Medicard</li>
+                <li>Scheduling</li>
+            </ul> 
+            </div>
+          </div>
+
+          <div class="large-6 small-6 columns">
+            <div class="panel">
+              <h5>Inter-county Tickets</h5>
+              <ul>
+                <li>How To / Info</li>
+                <li>NWT</li>
+                <li>Greyhound</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <%= yield %>
+   
+    </div>
+   
+   
+    <!-- Footer -->
+   
+    <footer class="row" align="center">
+        <hr />
+
+        <p>Service made possible by these partners:</p>
+
+          <!--TODO: resize as logos instead of using big images.-->
+          <%= image_tag "itd.jpg", size: "100x100" %>
+          <%= image_tag "city_of_moscow.gif", size: "100x100" %>
+          <%= image_tag "u_of_i.png", size: "100x100" %>
+          <%= image_tag "united_way.jpg", size: "100x100" %>
+          <%= image_tag "nsa.png", size: "100x100" %>
+
+          <p>And other generous local supporters.</p>
+
+        <hr />
+
+        <p>© Copyright 2014 R2 Transit. All rights reserved.</p>
+    </footer>
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
