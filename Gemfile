@@ -49,3 +49,15 @@ gem 'zurb-foundation'
 
 #Font Awesome
 gem 'font-awesome-rails'
+
+#Mercury
+#    * If you want image processing and uploading (using paperclip by default):
+#    
+#      rails g mercury:install:images (use --orm=mongoid for MongoDB)
+#      bundle
+#      rake db:migrate (if using ActiveRecord)
+#    
+#    * For a basic example of authentication for Mercury, install the example:
+#    
+#      rails g mercury:install:authentication
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'#, ref: 'a2b16bcdc9'

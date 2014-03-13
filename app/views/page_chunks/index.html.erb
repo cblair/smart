@@ -1,0 +1,29 @@
+<h1>Listing page_chunks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_chunks.each do |page_chunk| %>
+      <tr>
+        <td><%= page_chunk.name %></td>
+        <td><%= page_chunk.content %></td>
+        <td><%= link_to 'Show', page_chunk %></td>
+        <td><%= link_to 'Edit', edit_page_chunk_path(page_chunk) %></td>
+        <td><%= link_to 'Destroy', page_chunk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page chunk', new_page_chunk_path %>

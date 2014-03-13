@@ -1,4 +1,12 @@
 Smart::Application.routes.draw do
+  resources :page_chunks
+
+  mount Mercury::Engine => '/'
+  Mercury::Engine.routes
+  resources :pages do
+    member { post :mercury_update }
+  end
+
   resources :notifications
 
   # The priority is based upon order of creation: first created -> highest priority.
