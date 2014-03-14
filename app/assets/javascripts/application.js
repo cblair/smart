@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-migrate-min
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
 // Leaving this out per Mercury instructions.
 // require_tree .
+//= require mercury/mercury
 
 $(function(){ $(document).foundation(); });

@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<!--
 <p>
   <strong>Name:</strong>
   <%= @page_chunk.name %>
@@ -9,6 +10,17 @@
   <strong>Content:</strong>
   <%= @page_chunk.content %>
 </p>
+-->
 
+<div class="content">
+  <div data-mercury="full" contenteditable="true">
+    <%= raw @page_chunk.content %>
+  </div>
+
+  <p><%= link_to "Edit Page", "/editor" + request.path %></p>
+</div>
+
+<!--
 <%= link_to 'Edit', edit_page_chunk_path(@page_chunk) %> |
 <%= link_to 'Back', page_chunks_path %>
+-->

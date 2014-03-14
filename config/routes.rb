@@ -1,4 +1,6 @@
 Smart::Application.routes.draw do
+  resources :pages
+
   resources :page_chunks
 
   mount Mercury::Engine => '/'
