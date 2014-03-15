@@ -40,6 +40,13 @@ class PageChunksController < ApplicationController
   # PATCH/PUT /page_chunks/1
   # PATCH/PUT /page_chunks/1.json
   def update
+    @page_chunk = PageChunk.find(params[:id])
+    #TODO: Not sure why "undefined" is a key.
+    @page_chunk.content = params[:content][:undefined][:value]
+    @page_chunk.save!
+
+    render text: ""
+=begin
     respond_to do |format|
       if @page_chunk.update(page_chunk_params)
         format.html { redirect_to @page_chunk, notice: 'Page chunk was successfully updated.' }
@@ -49,6 +56,7 @@ class PageChunksController < ApplicationController
         format.json { render json: @page_chunk.errors, status: :unprocessable_entity }
       end
     end
+=end
   end
 
   # DELETE /page_chunks/1

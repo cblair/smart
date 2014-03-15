@@ -1,5 +1,7 @@
 Smart::Application.routes.draw do
-  resources :pages
+  resources :pages do
+    member { post :mercury_update }
+  end
 
   resources :page_chunks
 
