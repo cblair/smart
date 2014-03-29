@@ -11,6 +11,7 @@ Smart::Application.routes.draw do
     member { post :mercury_update }
   end
 
+  get 'notifications/push_twitter/:id' => 'notifications#push_twitter', as: :push_twitter
   resources :notifications
 
   # The priority is based upon order of creation: first created -> highest priority.

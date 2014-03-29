@@ -7,7 +7,6 @@
       <th>Content</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -15,7 +14,6 @@
     <% @page_chunks.each do |page_chunk| %>
       <tr>
         <td><%= page_chunk.name %></td>
-        <td><%= page_chunk.content %></td>
         <td><%= link_to 'Show', page_chunk %></td>
         <td><%= link_to 'Edit', edit_page_chunk_path(page_chunk) %></td>
         <td><%= link_to 'Destroy', page_chunk, method: :delete, data: { confirm: 'Are you sure?' } %></td>

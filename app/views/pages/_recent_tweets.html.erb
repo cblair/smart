@@ -1,19 +1,28 @@
 <%
-    twiter_username = "r2transit"
+    #twiter_username = "r2transit"
+    twiter_username = "myriad360"
     #How often to break the cache and updates tweets. Rate limited
     # per Twitter usage policy.
     tweet_refresh = 15 #minutes
+    last_refresh = Time.now()
 %>
 
 <div id="recent_tweets">
 <% cache(:action => "recent_tweets", :expires_in => tweet_refresh.minutes) do %>
-    <% @twitter_client.user_timeline(twiter_username, {:count => 3}).each do |tweet| %>
-       <blockquote><%= tweet.text %></blockquote>
-       <div class="from">&mdash; @<%= tweet.user.screen_name %></div>
+    <% begin %>
+        <% @twitter_client.user_timeline(twiter_username, {:count => 3}).each do |tweet| %>
+           <blockquote><%= tweet.text %></blockquote>
+           <div class="from">&mdash; @<%= tweet.user.screen_name %></div>
+        <% end %>
+        <% last_refresh = Time.now() %>
+    <% rescue Twitter::Error::Unauthorized %>
+        <p><b>Twitter authentication error.</b></p>
+    <% rescue %>
+        <p><b>Twitter unknown error.</b></p>
     <% end %>
 <% end %>
 
 <hr />
 
-<p>Updated every <%= tweet_refresh %> minutes. <%= link_to "See all...", "https://www.twiter.com/#{twiter_username}"%></p>
+<p>Updated every <%= tweet_refresh %> minutes, last update at <%= last_refresh %>. <%= link_to "See all...", "https://www.twiter.com/#{twiter_username}"%></p>
 </div>

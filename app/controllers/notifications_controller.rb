@@ -1,5 +1,8 @@
 class NotificationsController < ApplicationController
-  before_action :set_notification, only: [:show, :edit, :update, :destroy]
+
+  include TwitterCredentialsHelper
+
+  before_action :set_notification, only: [:show, :edit, :update, :destroy, :push_twitter]
 
   # GET /notifications
   # GET /notifications.json
@@ -58,6 +61,41 @@ class NotificationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to notifications_url }
       format.json { head :no_content }
+    end
+  end
+
+  def push_twitter
+    #Set all updates as success until a failure
+    social_update_suc = true
+
+    #Get the twitter client.
+    client = get_twitter_client
+
+    #Try a Twitter update, and report any errors.
+    begin
+      @notifcation.tweet_id = client.update(@notifcations.desc).id
+    rescue Twitter::Error::Unauthorized => e
+      social_update_suc = false
+      flash[:error] = "A Twitter login error occured."
+    # Probably many more, but catch the ones we don't know.
+    rescue
+      social_update_suc = false
+      flash[:error] = "An unknown Twitter error occured."
+    end
+
+    #TODO: Facebook
+
+    @notifications = Notification.all
+    respond_to do |format|
+      if social_update_suc && @notification.save
+        flash[:success] = "Tweet updated successfully."
+
+        format.html { render action: 'index' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @notification.errors, status: :unprocessable_entity }
+      end
     end
   end
 

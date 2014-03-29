@@ -20,6 +20,8 @@
                 <li>Bing Transit</li>
                 <li>Closures</li>
               </ul>
+
+              <%= render :partial => "page_chunks/editable_page_chunk", :locals => {:page_chunk => PageChunk.find_or_create_by(name: "home_index_fixed_rate")} %>
             </div>
           </div>
 

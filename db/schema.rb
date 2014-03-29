@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314014428) do
+ActiveRecord::Schema.define(version: 20140328030615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140314014428) do
     t.text     "ndesc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tweet_id"
   end
 
   create_table "page_chunks", force: true do |t|

@@ -41,6 +41,18 @@
       </div>
     </div>
     <!-- End Header and Nav -->
+
+    <div class="row">
+      <div class="large-12 columns">
+      <% if flash[:error] %>
+        <div data-alert class="alert-box warning">
+          <%= flash[:error] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+      </div>
+    </div>
+
     <div class="row">
    <!-- Nav Sidebar -->
       <!-- This is source ordered to be pulled to the left on larger screens -->
@@ -48,7 +60,7 @@
         <div class="panel">
             <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
               <section class="section">
-                <h5 class="title"><a href="#">Home</a></h5>
+                <h5 class="title"><a href="/">Home</a></h5>
               </section>
               <br>
               <section class="section">
@@ -74,7 +86,7 @@
    
         </div>
       </div>
-      
+
     <%= yield %>
    
     <!-- Footer -->
