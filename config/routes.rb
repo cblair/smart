@@ -1,25 +1,29 @@
 Smart::Application.routes.draw do
-  resources :pages do
-    member { post :mercury_update }
-  end
-
+  get 'pages/home' => 'pages#home'
+  resources :pages
   resources :page_chunks
+  #TODO: fix when the Mercury saveURL works.
+  #resources :page_chunks do
+  #  member { put :mercury_update }
+  #end
+
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
+  #root 'home#index'
+  root 'pages#home'
 
   mount Mercury::Engine => '/'
-  Mercury::Engine.routes
-  resources :pages do
-    member { post :mercury_update }
-  end
+  #Mercury::Engine.routes
+  #resources :page_chunks do
+  #  member { post :update }
+  #end
+  #put '/' => 'page_chunks#update'
 
   get 'notifications/push_twitter/:id' => 'notifications#push_twitter', as: :push_twitter
   resources :notifications
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

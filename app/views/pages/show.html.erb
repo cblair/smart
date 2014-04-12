@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @page.name %>
-</p>
+<h1><%= @page.name %></h1>
 
+<%= render :partial => "page_chunks/editable_page_chunk", :locals => {:page_chunk => PageChunk.find_or_create_by_name_and_page_name("first_section", @page.name)} %>
+
+<%= render :partial => "page_chunks/editable_page_chunk", :locals => {:page_chunk => PageChunk.find_or_create_by_name_and_page_name("second_section", @page.name)} %>
+
+<!--
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>
+-->

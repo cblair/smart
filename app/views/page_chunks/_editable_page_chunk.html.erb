@@ -1,8 +1,8 @@
 <div class="content">
-  <div data-mercury="full" contenteditable="true">
+  <div class="page-chunk-content test" data-mercury="full" contenteditable="true" data-save-url="<%= page_chunk_path(page_chunk) %>">
     <%= raw page_chunk.content %>
   </div>
 
-  <!--TODO: Something about this link is not loading the JS right, but manually entering the URL or refreshing the page fixes it. ??-->
-  <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_page_path(page_chunk)} %></p>
+  <!--PageChunk name: <%= page_chunk.name %>-->
+  <p><%= link_to "Edit HTML", "/editor" + request.path + "?page_chunk_id=#{page_chunk.id}", id: "edit_link", data: {save_url: page_chunk_path(page_chunk)} %></p>
 </div>

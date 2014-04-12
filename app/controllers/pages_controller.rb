@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
 
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [
+    :show,
+    :edit,
+    #Not for update, since its now for PageChunks
+    #:update,
+    :destroy]
 
   # GET /pages
   # GET /pages.json
@@ -11,6 +16,12 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+  end
+
+  # GET /pages/1
+  # GET /pages/1.json
+  def home
+    @page = Page.find_or_create_by(name: "home")
   end
 
   # GET /pages/new
@@ -41,15 +52,13 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
-    respond_to do |format|
-      if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
-      end
-    end
+    #Mercury update for PageChunk (instead of the Page update stuff)
+    @page_chunk = PageChunk.find(params[:page_chunk_id])
+    #TODO: Not sure why "undefined" is a key.
+    @page_chunk.content = params[:content][:undefined][:value]
+    @page_chunk.save!
+
+    render text: ""
   end
 
   # DELETE /pages/1
@@ -70,6 +79,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:name)
+      params.require(:page).permit(:name, :page_chunk_id)
     end
 end

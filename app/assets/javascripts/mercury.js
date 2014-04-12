@@ -449,8 +449,39 @@ window.Mercury = {
   // Turning debug mode on will log events and other various things (using console.debug if available).
   debug: false
 
+  /*
+  onload: function() {
+    //Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
+    Mercury.on('ready', function() {
+      var link = $('#mercury_iframe').contents().find('#edit_link');
+      Mercury.saveUrl = link.data('save-url');
+      link.hide();
+      console.log("TS458: " + Mercury.saveUrl);
+    });
+
+    Mercury.on('saved', function() {
+      window.location.href = window.location.href.replace(/\/editor\//i, '/');
+    });
+  }
+  */
+
 };
 
-$(window).bind('mercury:saved', function() {
+$(window).on('mercury:saved', function() {
+  //Redirect to non-editor page view.
   window.location = window.location.href.replace(/\/editor\//i, '/');
 });
+
+//Mercury custom save path.
+$(window).on('mercury:ready', function() {
+  var link = $('#mercury_iframe').contents().find('#edit_link');
+  Mercury.saveUrl = link.data('save-url');
+  link.hide();
+
+  //Update 
+  $('#mercury_iframe').contents().find('div.page-chunk-content').click(function() {
+    Mercury.saveUrl = $(this).data('save-url');
+  });
+});
+
+$()
