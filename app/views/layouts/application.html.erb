@@ -33,6 +33,21 @@
             <li><a href="#" class="small button">Donate</a></li>
             <li><a href="#" class="small button">About</a></li>
             <li><a href="#" class="small button">News</a></li>
+          <% if user_signed_in? %>
+            <li>
+              Logged in as <strong><%= link_to current_user.email, edit_user_registration_path, class: "small button" %></strong>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "small button" %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign up", new_user_registration_path, class: "small button" %>
+            </li>
+            <li>
+              <%= link_to "Login", new_user_session_path, class: "small button" %>
+            </li>
+          <% end %>
             <li><a href="#" class="small button"><%= fa_icon "facebook-square" %></a></li>
             <li><a href="#" class="small button"><%= fa_icon "twitter" %></a></li>
           </ul>
@@ -44,6 +59,14 @@
 
     <div class="row">
       <div class="large-12 columns">
+      <% alert_or_notice = flash[:notice] if flash[:notice] %>
+      <% alert_or_notice = flash[:alert] if flash[:alert] %>
+      <% if alert_or_notice %>
+        <div data-alert class="alert-box info">
+          <%= alert_or_notice %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
       <% if flash[:error] %>
         <div data-alert class="alert-box warning">
           <%= flash[:error] %>
@@ -87,7 +110,9 @@
         </div>
       </div>
 
-    <%= yield %>
+      <div class="large-9 columns">
+        <%= yield %>
+      </div>
    
     <!-- Footer -->
    

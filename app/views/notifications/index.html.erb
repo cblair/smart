@@ -18,16 +18,7 @@
         <td><%= notification.title %></td>
         <!--TODO: drop downs not working-->
         <td><%= link_to "Push", push_twitter_path(notification), {:class => "button fa fa-twitter"} %></td>
-        <td><%= link_to "Push", "#TODO", {:class => "button fa fa-facebook"} %></td>
-        <!--
-        <td>
-          <a href="#" data-dropdown="drop1" class="button dropdown">Push all social</a><br>
-          <ul id="drop1" data-dropdown-content class="f-dropdown">
-            <li><%= link_to "Push", push_twitter_path(notification), {:class => "button fa fa-twitter"} %></li>
-            <li><%= link_to "Push", "#TODO", {:class => "button fa fa-facebook"} %></li>
-          </ul>
-        </td>
-        -->
+        <td><%= link_to "Push", push_facebook_path(notification), {:class => "button fa fa-facebook"} %></td>
         <td><%= link_to 'Show', notification %></td>
         <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
         <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>

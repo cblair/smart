@@ -26,4 +26,21 @@ Smart::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  #Mailer
+  # localhost is default dev url
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.default_charset = "utf-8"
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+       :authentication => :plain,
+       :address => "smtp.mailgun.org",
+       :port => 587,
+       :domain => "app23569691.mailgun.org",
+       :user_name => "postmaster@app23569691.mailgun.org",
+       :password => "6cr0b8lf4-r5"
+  }
 end

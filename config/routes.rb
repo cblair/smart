@@ -1,4 +1,5 @@
 Smart::Application.routes.draw do
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   get 'pages/home' => 'pages#home'
   resources :pages
   resources :page_chunks
@@ -20,6 +21,7 @@ Smart::Application.routes.draw do
   #put '/' => 'page_chunks#update'
 
   get 'notifications/push_twitter/:id' => 'notifications#push_twitter', as: :push_twitter
+  get 'notifications/push_facebook/:id' => 'notifications#push_facebook', as: :push_facebook
   resources :notifications
 
   # The priority is based upon order of creation: first created -> highest priority.

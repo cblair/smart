@@ -71,3 +71,8 @@ gem 'jquery-migrate-rails'
 
 #Social media stuff
 gem 'twitter', '5.8.0'
+gem 'omniauth-facebook', '1.6.0'
+gem 'koala', '1.9.0'
+
+#Users - Devise
+gem 'devise', '3.2.3'

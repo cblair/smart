@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
 
   include TwitterCredentialsHelper
 
-  before_action :set_notification, only: [:show, :edit, :update, :destroy, :push_twitter]
+  before_action :set_notification, only: [:show, :edit, :update, :destroy, :push_twitter, :push_facebook]
 
   # GET /notifications
   # GET /notifications.json
@@ -73,7 +73,7 @@ class NotificationsController < ApplicationController
 
     #Try a Twitter update, and report any errors.
     begin
-      @notifcation.tweet_id = client.update(@notifcations.desc).id
+      @notifcation.tweet_id = client.update(@notifcation.ndesc).id
     rescue Twitter::Error::Unauthorized => e
       social_update_suc = false
       flash[:error] = "A Twitter login error occured."
@@ -83,13 +83,34 @@ class NotificationsController < ApplicationController
       flash[:error] = "An unknown Twitter error occured."
     end
 
-    #TODO: Facebook
-
     @notifications = Notification.all
     respond_to do |format|
       if social_update_suc && @notification.save
         flash[:success] = "Tweet updated successfully."
 
+        format.html { render action: 'index' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @notification.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def push_facebook
+    begin
+      Facebook.new.get_active_connection.put_wall_post(@notification.ndesc)
+      flash[:success] = "Tweet updated successfully."
+    rescue Koala::Facebook::ClientError => e
+      flash[:alert] = "Facebook update failed, client error: "
+      flash[:alert] += e.to_s
+    rescue => e
+      flash[:alert] = "Facebook update failed, error: #{e.to_s}"
+    end
+
+    @notifications = Notification.all
+    respond_to do |format|
+      if flash[:success]
         format.html { render action: 'index' }
         format.json { head :no_content }
       else
