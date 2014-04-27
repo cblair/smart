@@ -50,7 +50,7 @@ end
 gem 'debugger', group: [:development, :test]
 
 #Zurb
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 #Font Awesome
 gem 'font-awesome-rails'
