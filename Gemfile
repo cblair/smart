@@ -48,6 +48,7 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+gem 'retina_tag'
 
 #Zurb
 gem 'foundation-rails'
