@@ -73,14 +73,9 @@ class NotificationsController < ApplicationController
 
     #Try a Twitter update, and report any errors.
     begin
-      @notifcation.tweet_id = client.update(@notifcation.ndesc).id
-    rescue Twitter::Error::Unauthorized => e
-      social_update_suc = false
-      flash[:error] = "A Twitter login error occured."
-    # Probably many more, but catch the ones we don't know.
-    rescue
-      social_update_suc = false
-      flash[:error] = "An unknown Twitter error occured."
+      @notification.tweet_id = client.update(@notification.ndesc).id
+    rescue => e
+      flash[:alert] = "Twitter update failed, error: #{e.to_s}"
     end
 
     @notifications = Notification.all
@@ -99,8 +94,8 @@ class NotificationsController < ApplicationController
 
   def push_facebook
     begin
-      Facebook.new.get_active_connection.put_wall_post(@notification.ndesc)
-      flash[:success] = "Tweet updated successfully."
+      Facebook.new.get_active_connection(current_user).put_wall_post(@notification.ndesc)
+      flash[:success] = "Facebook updated successfully."
     rescue Koala::Facebook::ClientError => e
       flash[:alert] = "Facebook update failed, client error: "
       flash[:alert] += e.to_s

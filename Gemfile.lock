@@ -206,7 +206,7 @@ DEPENDENCIES
   jquery-rails
   koala (= 1.9.0)
   mercury-rails!
-  omniauth-facebook
+  omniauth-facebook (= 1.6.0)
   pg
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)

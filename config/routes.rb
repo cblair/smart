@@ -23,6 +23,9 @@ Smart::Application.routes.draw do
   get 'notifications/push_twitter/:id' => 'notifications#push_twitter', as: :push_twitter
   get 'notifications/push_facebook/:id' => 'notifications#push_facebook', as: :push_facebook
   resources :notifications
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
