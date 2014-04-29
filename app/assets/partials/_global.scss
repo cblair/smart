@@ -1,0 +1,138 @@
+// Here we define the lower and upper bounds for each media size
+$my-mobile-range: (0px, 635px);
+$my-small-range: (636px, 781px); /* 0, 781px */
+$my-medium-range: (781px, 1024px); /* 782px, 1024px */
+$my-large-range: (1025px, 1440px); /* 1025px, 1440px */
+
+// Media Queries
+$screen: "only screen" !default;
+
+$th-mobile-up: $screen !default;
+//$th-mobile-up: "#{$screen} and (min-width:#{lower-bound($my-mobile-range)}) and (max-width: #{upper-bound($my-mobile-range)})" !default;
+$th-small-only: "#{$screen} and (min-width:#{lower-bound($my-small-range)}) and (max-width: #{upper-bound($my-small-range)})" !default;
+$th-medium-up: "#{$screen} and (min-width:#{lower-bound($my-medium-range)})" !default;
+$th-medium-only: "#{$screen} and (min-width:#{lower-bound($my-medium-range)}) and (max-width:#{upper-bound($my-medium-range)})" !default;
+$th-large-up: "#{$screen} and (min-width:#{lower-bound($my-large-range)})" !default;
+$th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and (max-width:#{upper-bound($my-large-range)})" !default;
+
+.top-header {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.top-header-text {
+	font-family: Arial;
+	color:#c4c4c4;
+	position:absolute;
+}
+
+@media #{$th-mobile-up} { 
+	.top-header-text {
+		font-size: 18px;
+		height:45px;
+		margin-top:25px;
+	}
+}
+
+@media #{$th-small-only} { 
+	.top-header-text {
+		font-size: 24px;
+		height:45px;
+		margin-top:45px;
+	}
+}
+
+@media #{$th-medium-up} { 
+	.top-header-text {
+		font-size: 30px;
+		height:100px;		
+		margin-top:55px;
+	}
+}
+@media #{$th-medium-only} { 
+	.top-header-text {
+		font-size: 30px;
+		height:100px;		
+	}
+}
+
+@media #{$th-large-up} { 
+	.top-header-text {
+		font-size: 38px;
+	}
+}
+@media #{$th-large-only} { 
+	.top-header-text {
+		font-size: 38px;
+	}
+}
+
+ul.main-nav {
+	padding-top:0px;
+	li {
+		background-color:#58585B;
+		color:white;
+		font-family:Arial;
+		font-size:14px;
+		height:30px;
+		vertical-align: middle;
+		margin-top:0px;
+		margin-bottom:5px;
+	
+		a:link {
+			color:white;
+			margin-top:auto;
+			margin-bottom:auto;
+			width:100%;
+			padding-left:15px;
+			padding-top:6px;
+		}
+		a:hover {
+			color:white;
+			background:transparent;
+		}
+	}
+
+}
+
+div.follow-us {
+	font:Arial;
+	font-size:14px;
+	color:#58585B;
+	text-align:right;
+	vertical-align:middle;
+	.fa {
+		font-size:26px;
+	}
+}
+
+div.rider-alerts,
+div.fixed-route,
+div.dial-a-ride,
+div.inter-county {
+	border-radius:10px;
+	border-width:2px;
+	border-style: solid;
+	margin-top:15px;
+	height:auto;
+}
+
+div.rider-alerts {
+	border-color:#E34F25;
+}
+
+div.fixed-route {
+	border-color:#0370B5;
+}
+
+div.dial-a-ride {
+	border-color:#119E72;
+}
+
+div.inter-county {
+	border-color:#836892;
+}
+
+div.scrollable {
+	overflow:auto;
+}

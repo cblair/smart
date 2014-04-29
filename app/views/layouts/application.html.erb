@@ -22,133 +22,69 @@
   </head>
 
   <body>
-    <!-- Header and Nav -->
- 
+    <!-- Header -->
+    <div class="row top-header">
+      <div class="small-9 medium-9 large-9 columns top-header-text">
+         REGIONAL PUBLIC TRANSPORTATION
+      </div>
+      <div class="small-3 medium-3 large-3 columns top-header-image">
+          <%= image_tag("smart-logo.png", height:82, width:170)%>
+      </div>      
+    </div>
+    <!-- End Header -->
+
+    <!-- Header -->
     <div class="row">
       <div class="large-12 columns">
-        <div class="panel">
-          <h1>SMART - Transit</h1>
 
-          <ul class="button-group" align="right">
-            <li><a href="#" class="small button">Donate</a></li>
-            <li><a href="#" class="small button">About</a></li>
-            <li><a href="#" class="small button">News</a></li>
-          <!--Devise login stuff, disabled for now. Using Facebook login.
-          <% if user_signed_in? %>
-            <li>
-              Logged in as <strong><%= link_to current_user.email, edit_user_registration_path, class: "small button" %></strong>
-            </li>
-            <li>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "small button" %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Sign up", new_user_registration_path, class: "small button" %>
-            </li>
-            <li>
-              <%= link_to "Login", new_user_session_path, class: "small button" %>
-            </li>
-          <% end %>
-          -->
-            <!--
-            <li><a href="#" class="small button"><%= fa_icon "facebook-square" %></a></li>
-            <li><a href="#" class="small button"><%= fa_icon "twitter" %></a></li>
-            -->
-            <li>
-            <% if current_user %>
-              <%= link_to current_user.name + " (sign out)", signout_path, id: "sign_out", class: "small button" %>
-            <% else %>
-              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "small button" %>
-            <% end %>
-            </li>
-          </ul>
-
-        </div>
       </div>
     </div>
-    <!-- End Header and Nav -->
+    <!-- End Headher -->
 
+    <!-- Body -->
     <div class="row">
-      <div class="large-12 columns">
-      <% alert_or_notice = flash[:notice] if flash[:notice] %>
-      <% alert_or_notice = flash[:alert] if flash[:alert] %>
-      <% if alert_or_notice %>
-        <div data-alert class="alert-box info">
-          <%= alert_or_notice %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% elsif flash[:error] %>
-        <div data-alert class="alert-box warning">
-          <%= flash[:error] %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% elsif flash[:success] %>
-        <div data-alert class="alert-box success">
-          <%= flash[:success] %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
+      <div class="medium-3 large-3 columns">
+        <ul class="side-nav main-nav">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">DONATE</a></li>
+          <li><a href="#">DIRECTIONS</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">SERVICE</a></li>      
+          <li><a href="#">HOW TO TRAVEL</a></li>
+          <li><a href="#">EMPLOYMENT</a></li>
+          <li><a href="#">LOGIN</a></li>                
+        </ul>
       </div>
-    </div>
-
-    <div class="row">
-   <!-- Nav Sidebar -->
-      <!-- This is source ordered to be pulled to the left on larger screens -->
-      <div class="large-3 columns ">
-        <div class="panel">
-            <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-              <section class="section">
-                <h5 class="title"><a href="/">Home</a></h5>
-              </section>
-              <br>
-              <section class="section">
-                <h5 class="title"><a href="#">Contact</a></h5>
-              </section>
-              <br>
-              <section class="section">
-                <h5 class="title"><a href="#">Directions</a></h5>
-              </section>
-              <br>
-              <section class="section">
-                <h5 class="title"><a href="#">Service</a></h5>
-              </section>
-              <br>
-              <section class="section">
-                <h5 class="title"><a href="#">How to travel</a></h5>
-              </section>
-              <br>
-              <section class="section">
-                <h5 class="title"><a href="#">Employment</a></h5>
-              </section>
+      <div class="small-9 large-9 columns">
+        <div class="row">
+          <div class="small-12 follow-us">
+            FOLLOW US ON:&nbsp;&nbsp;
+            <%= fa_icon "facebook-square" %>
+            <%= fa_icon "twitter" %>
           </div>
-   
+          <div class="small-12">
+            <% alert_or_notice = flash[:notice] if flash[:notice] %>
+            <% alert_or_notice = flash[:alert] if flash[:alert] %>
+            <% if alert_or_notice %>
+              <div data-alert class="alert-box info">
+                <%= alert_or_notice %>
+                <a href="#" class="close">&times;</a>
+              </div>
+            <% end %>
+
+            <%= yield %>
+          </div>
         </div>
+
+
       </div>
+    </div>
+    <!-- End Body -->
 
-      <div class="large-9 columns">
-        <%= yield %>
-      </div>
-   
-    <!-- Footer -->
-   
-    <footer class="row" align="center">
-        <hr />
 
-        <p>Service made possible by these partners:</p>
 
-          <!--TODO: resize as logos instead of using big images.-->
-          <%= image_tag "itd.jpg", size: "100x100" %>
-          <%= image_tag "city_of_moscow.gif", size: "100x100" %>
-          <%= image_tag "u_of_i.png", size: "100x100" %>
-          <%= image_tag "united_way.jpg", size: "100x100" %>
-          <%= image_tag "nsa.png", size: "100x100" %>
-
-          <p>And other generous local supporters.</p>
-
-        <hr />
-
-        <p>© Copyright 2014 R2 Transit. All rights reserved.</p>
-    </footer>
     
     <%= javascript_include_tag "application" %>
   </body>

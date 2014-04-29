@@ -48,9 +48,10 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+gem 'retina_tag'
 
 #Zurb
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 #Font Awesome
 gem 'font-awesome-rails'

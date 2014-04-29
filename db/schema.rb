@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20140428020102) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "cblair"
     t.string   "username"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"

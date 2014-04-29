@@ -18,5 +18,6 @@
 // Leaving this out per Mercury instructions.
 // require_tree .
 // require mercury/mercury
+//= require retina_tag
 
 $(function(){ $(document).foundation(); });

@@ -1,39 +1,79 @@
 <!-- Main Feed -->
 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-  <div class="panel">
-    <h4 class="hide-for-small">Rider Alerts<hr/></h4>
-    <h5 class="subheader">Live services and social media feeds.</h5>
-    <%= render :partial => "pages/recent_tweets" %>
-  </div>
-
+<div class="row">
   <div class="row">
-    <div class="large-6 small-6 columns">
-      <div class="panel">
-
-        <%= render :partial => "page_chunks/editable_page_chunk", :locals => {:page_chunk => PageChunk.find_or_create_by_name_and_page_name("fixed_rate", "home")} %>
-      </div>
-    </div>
-
-    <div class="large-6 small-6 columns">
-      <div class="panel">
-        <h5>Dial a Ride</h5>
-        <ul>
-          <li>Guide / How To</li>
-          <li>ADA Priority</li>
-          <li>Medicard</li>
-          <li>Scheduling</li>
-      </ul> 
-      </div>
-    </div>
-
-    <div class="large-6 small-6 columns">
-      <div class="panel">
-        <h5>Inter-county Tickets</h5>
-        <ul>
-          <li>How To / Info</li>
-          <li>NWT</li>
-          <li>Greyhound</li>
-        </ul>
+    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+      <div class="rider-alerts">
+        <div class="row">
+           <div class="small-4 columns">
+              <%= image_tag("rider-alerts-image.png", height:296, width:317)%>
+           </div>
+          <div class="small-8 columns scrollable">
+            <h5 class="subheader">Live services and social media feeds.</h5>
+            <%= render :partial => "pages/recent_tweets" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+      <div class="fixed-route">
+        <div class="row">
+           <div class="small-4 columns">
+              <h5>Moscow Fixed Route</h5>
+              <h5>Fare Free</h5>
+           </div>
+           <div class="small-8 columns">
+              <ul class="small-block-grid-2">
+                <li>Schedule (pdf)</li>
+                <li>How to / rules</li>
+                <li>Idaho 511</li>
+                <li>Google Transit</li>
+                <li>Bing Transit</li>
+                <li>Closures</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+      <div class="dial-a-ride">
+        <div class="row">
+           <div class="small-4 columns">
+             <h5>Dial a Ride</h5>
+           </div>
+           <div class="small-8 columns">
+              <ul class="small-block-grid-2">
+                <li>Guide / How To</li>
+                <li>ADA Priority</li>
+                <li>Medicard</li>
+                <li>Scheduling</li>
+              </ul>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </div>
+  <div class="row">  
+    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+      <div class="inter-county">
+        <div class="row">
+           <div class="small-4 columns">
+              <h5>Inter-county Tickets</h5>
+           </div>
+           <div class="small-8 columns">
+              <ul class="small-block-grid-2">
+                <li>How To / Info</li>
+                <li>NWT</li>
+                <li>Greyhound</li>
+              </ul>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+              <%= render :partial => "page_chunks/editable_page_chunk", :locals => {:page_chunk => PageChunk.find_or_create_by_name_and_page_name("fixed_rate", "home")} %>
+</div>
