@@ -95,6 +95,76 @@ ul.main-nav {
 
 }
 
+//Home header nav buttons.
+// TODO: refactor
+ul.top-left-nav {
+	padding-top:0px;
+	li {
+		background-color:#58585B;
+		color:white;
+		font-family:Arial;
+		font-size:14px;
+		height:30px;
+		vertical-align: middle;
+		margin-top:5px;
+		margin-bottom:5px;
+		margin-right: 5px;
+		width: 100%;
+	
+		a:link {
+			color:white;
+			margin-top:auto;
+			margin-bottom:auto;
+			width:100%;
+			padding-left:15px;
+			padding-top:6px;
+		}
+		a:hover {
+			color:white;
+			background:transparent;
+		}
+	}
+}
+ul.top-right-nav {
+	padding-top:0px;
+	li {
+		background-color:#58585B;
+		color:white;
+		font-family:Arial;
+		font-size:14px;
+		height:30px;
+		vertical-align: middle;
+		margin-top:5px;
+		margin-bottom:5px;
+		margin-right: 5px;
+		width: 100%;
+	
+		a:link {
+			color:white;
+			margin-top:auto;
+			margin-bottom:auto;
+			width:100%;
+			padding-left:15px;
+			padding-top:6px;
+		}
+		a:hover {
+			color:white;
+			background:transparent;
+		}
+	}
+
+}
+img.top-nav {
+	width: 31.5%;
+	height: 300px;
+}
+div.nav {
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
 div.follow-us {
 	font:Arial;
 	font-size:14px;
