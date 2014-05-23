@@ -13,3 +13,8 @@
  *= require font-awesome
  *= require_tree .
  */
+
+//Hidden slideshow images for use in JS later.
+div.slideshow-hidden {
+    display: none;
+}

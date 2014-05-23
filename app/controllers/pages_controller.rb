@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def home
     @page = Page.find_or_create_by(name: "home")
+    @images = Dir.glob("app/assets/images/home_banner/cropped/*.jpg")
   end
 
   # GET /pages/new

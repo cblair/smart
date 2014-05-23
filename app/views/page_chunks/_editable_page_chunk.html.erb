@@ -4,5 +4,7 @@
   </div>
 
   <!--PageChunk name: <%= page_chunk.name %>-->
+  <% if current_user %>
   <p><%= link_to "Edit HTML", "/editor" + request.path + "?page_chunk_id=#{page_chunk.id}", id: "edit_link", data: {save_url: page_chunk_path(page_chunk)} %></p>
+  <% end %>
 </div>

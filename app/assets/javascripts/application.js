@@ -15,9 +15,10 @@
 //= require jquery_ujs
 //= require foundation
 // require turbolinks
-// Leaving this out per Mercury instructions.
-// require_tree .
 // require mercury/mercury
 //= require retina_tag
+// Leaving this out per Mercury instructions.
+// require_tree .
+//= require home_slideshow
 
 $(function(){ $(document).foundation(); });

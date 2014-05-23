@@ -1,5 +1,8 @@
 Smart::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  get '/login', to: redirect('/users/login')
+  get '/logout', to: redirect('/users/logout')
+
   get 'pages/home' => 'pages#home'
   resources :pages
   resources :page_chunks

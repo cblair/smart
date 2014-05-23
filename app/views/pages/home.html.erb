@@ -79,3 +79,9 @@
     </div>
   </div>
 </div>
+
+<div class="slideshow-hidden">
+  <% @images.each do |image| %>
+    <%= image_tag "home_banner/cropped/#{image.split('/').last}" %>
+  <% end %>
+</div>

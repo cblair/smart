@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   # GET /home
   # GET /home.json
   def index
-    @twitter_client = get_twitter_client    
+    @twitter_client = get_twitter_client
+
   end
 end
