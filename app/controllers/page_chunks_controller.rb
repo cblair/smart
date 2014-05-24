@@ -44,7 +44,6 @@ class PageChunksController < ApplicationController
     #TODO: Not sure why "undefined" is a key.
     @page_chunk.content = params[:content][:undefined][:value]
     @page_chunk.save!
-    debugger
 
     render text: ""
 =begin

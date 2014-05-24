@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+  include TwitterCredentialsHelper
+
   before_action :set_page, only: [
     :show,
     :edit,
@@ -23,6 +25,7 @@ class PagesController < ApplicationController
   def home
     @page = Page.find_or_create_by(name: "home")
     @images = Dir.glob("app/assets/images/home_banner/cropped/*.jpg")
+    @twitter_client = get_twitter_client
   end
 
   # GET /pages/new

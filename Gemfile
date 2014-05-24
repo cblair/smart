@@ -77,3 +77,5 @@ gem 'koala', '1.9.0'
 
 #Users - Devise
 gem 'devise', '3.2.3'
+
+gem 'will_paginate'

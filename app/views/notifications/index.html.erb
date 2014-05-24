@@ -1,5 +1,9 @@
 <h1>Listing notifications</h1>
 
+<%= image_tag "notification_twitter_icon.png" %>
+
+<%= will_paginate @notifications %>
+
 <table>
   <thead>
     <tr>
@@ -16,7 +20,6 @@
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.title %></td>
-        <!--TODO: drop downs not working-->
         <td><%= link_to "Push", push_twitter_path(notification), {:class => "button fa fa-twitter"} %></td>
         <td><%= link_to "Push", push_facebook_path(notification), {:class => "button fa fa-facebook"} %></td>
         <td><%= link_to 'Show', notification %></td>
