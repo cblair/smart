@@ -96,6 +96,21 @@ ul.main-nav {
 		}
 	}
 
+	li.contact {
+		background: #FF9900;
+	}
+	li.directions {
+		background: #FF0066;
+	}
+	li.service {
+		background: #E60000;
+	}
+	li.how-to-travel {
+		background: #2E8A2E;
+	}
+	li.employment {
+		background: #B800E6;
+	}
 }
 
 //Home header nav buttons.
@@ -202,6 +217,7 @@ div.inter-county {
 
 div.rider-alerts {
 	border-color:#E34F25;
+	background-color: #E34F25;
 }
 
 div.fixed-route {
@@ -244,6 +260,16 @@ div.home-box-content {
 
 a.button-logged-in {
 	background: #008cba;
+}
+
+img.side-logos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+blockquote {
+	font-size: smaller;
 }
 
 div.scrollable {

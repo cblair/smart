@@ -91,24 +91,35 @@
     <div class="row">
       <div class="medium-3 large-3 columns nav">
         <ul class="side-nav main-nav">
-          <li><%= link_to "DIRECTIONS", "#", class: 'nav' %></li>
-          <li><%= link_to "CONTACT", "#", class: 'nav' %></li>
-          <li><%= link_to "DIRECTIONS", "#", class: 'nav' %></li>
-          <li><%= link_to "SERVICE", "#", class: 'nav' %></li>      
-          <li><%= link_to "HOW TO TRAVEL", "#", class: 'nav' %></li>
-          <li><%= link_to "EMPLOYMENT", "#", class: 'nav' %></li>
+          <li class="contact"><%= link_to "CONTACT", "#", class: 'nav' %></li>
+          <li class="directions"><%= link_to "DIRECTIONS", "#", class: 'nav' %></li>
+          <li class="service"><%= link_to "SERVICE", "#", class: 'nav' %></li>      
+          <li class="how-to-travel"><%= link_to "HOW TO TRAVEL", "#", class: 'nav' %></li>
+          <li class="employment"><%= link_to "EMPLOYMENT", "#", class: 'nav' %></li>
           <% if current_user %>
           <li><%= link_to "NOTIFICATIONS", notifications_path, class: 'nav button-logged-in' %></li>
           <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'nav button-logged-in' %></li>
           <% end %>
         </ul>
+
+        <p><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS:</strong></p>
+        <%= image_tag "logos/nsa.png", class: 'side-logos' %>
+        <br />
+        <%= image_tag "logos/uofi.png", class: 'side-logos' %>
+        <br />
+        <%= image_tag "logos/idot.png", class: 'side-logos' %>
+        <br />
+        <%= image_tag "logos/moscow.png", class: 'side-logos' %>
+        <br />
+        <%= image_tag "logos/united_way.png", class: 'side-logos' %>
+        <br />
+        <%= image_tag "logos/generous_local_supporters.png", class: 'side-logos' %>
+        <br />
       </div>
       <div class="small-11 large-11 columns">
         <div class="row">
-          <div class="small-12 follow-us">
-            FOLLOW US ON:&nbsp;&nbsp;
-            <%= fa_icon "facebook-square" %>
-            <%= fa_icon "twitter" %>
+          <div class="small-14 follow-us">
+            LIVE RIDER ALERTS: FOLLOW US ON <%= fa_icon "twitter" %>! LIKE US ON <%= fa_icon "facebook-square" %>!
           </div>
           <div class="small-12">
             <% alert_or_notice = flash[:notice] if flash[:notice] %>
