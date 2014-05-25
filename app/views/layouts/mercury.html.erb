@@ -13,13 +13,11 @@
       // Set to the url that you want to save any given page to, leave null for default handling.
       //var link = $('#mercury-save-url');
       //var saveUrl = link.data('save-url');
-      //console.log("TS16: " + link.data('save-url'));
       var saveUrl = null;
-      //var saveUrl = "test";
 
       // Instantiate the PageEditor
       new Mercury.PageEditor(saveUrl, {
-        saveStyle:  'form', // 'form', or 'json' (default json)
+        saveStyle:  'json', // 'form', or 'json' (default json)
         saveMethod: null, // 'PUT', or 'POST', (create, vs. update -- default PUT)
         visible:    true  // boolean - if the interface should start visible or not
       });
