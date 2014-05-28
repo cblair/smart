@@ -22,8 +22,9 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 
 .top-header-text {
 	font-family: Arial;
-	color:#c4c4c4;
+	color:#3E3E29;
 	position:absolute;
+	font-size: 2.70rem
 }
 
 @media #{$th-mobile-up} { 
@@ -118,7 +119,7 @@ ul.main-nav {
 ul.top-left-nav {
 	padding-top:0px;
 	li {
-		background-color:#00A67C;
+		background-color:#0078C1;
 		color:white;
 		font-family:Arial;
 		font-size:14px;
@@ -146,7 +147,7 @@ ul.top-left-nav {
 ul.top-right-nav {
 	padding-top:0px;
 	li {
-		background-color:#00A67C;
+		background-color:#0078C1;
 		color:white;
 		font-family:Arial;
 		font-size:14px;
@@ -173,7 +174,8 @@ ul.top-right-nav {
 
 }
 img.top-nav {
-	width: 31.5%;
+	width: 31%;
+	max-width: 250px;
 	height: 250px;
 	//Cross browser greyscaling
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
@@ -216,8 +218,8 @@ div.inter-county {
 }
 
 div.rider-alerts {
-	border-color:#E34F25;
-	background-color: #E34F25;
+	border-color:#679045;
+	background-color: #679045;
 }
 
 div.fixed-route {
@@ -231,8 +233,8 @@ div.fixed-route-label {
 }
 
 div.dial-a-ride {
-	border-color:#119E72;
-	background:#119E72;
+	border-color:#FF3399;
+	background:#FF3399;
 }
 div.dial-a-ride-label {
 	h5 {
@@ -241,8 +243,8 @@ div.dial-a-ride-label {
 }
 
 div.inter-county {
-	border-color:#836892;
-	background:#836892;
+	border-color:#FFCC00;
+	background:#FFCC00;
 }
 div.inter-county-label {
 	h5 {
@@ -256,6 +258,11 @@ div.home-box-content {
 	padding: 3px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
+}
+
+h5.home-box-label {
+	font-family: inherit;
+	font-size: x-large;
 }
 
 a.button-logged-in {
@@ -272,6 +279,36 @@ blockquote {
 	font-size: smaller;
 }
 
+a.social-media-twitter {
+	color: #008cba;
+	text-decoration:none;
+	&:hover {
+		color: #008cba;
+		text-decoration:none;
+		background-color: white;
+	}
+	&:visited {
+		color: #008cba;
+	}
+}
+a.social-media-facebook {
+	color: #3B5998;
+	text-decoration:none;
+	&:hover {
+		color: #3B5998;
+		text-decoration:none;
+		background-color: white;
+	}
+	&:visited {
+		color: #3B5998;
+	}
+}
+
 div.scrollable {
 	overflow:auto;
+}
+
+div.home-body {
+	padding-left: 0px;
+	padding-right: 0px;
 }

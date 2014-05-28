@@ -7,22 +7,18 @@
 
 <div id="recent_tweets">
 <% cache({:action => 'home', :action_suffix => 'recent_tweets'}, :expires_in => tweet_refresh.minutes) do %>
+  <ul>
     <% begin %>
         <% last_refresh = Time.now() %>
         <% @twitter_client.user_timeline(twiter_username, {:count => 3}).each do |tweet| %>
-           <blockquote><%= tweet.text %>
-           <br />
+           <li><%= tweet.text %></li>
            <!--&mdash; @<%= tweet.user.screen_name %>-->
-           </blockquote>
         <% end %>
         <% last_refresh = Time.now() %>
     <% rescue => e %>
         <p><b>Twitter error: <%= e.to_s %></b></p>
     <% end %>
-    <span data-tooltip class="has-tip" title="Last update at <%= last_refresh %>">
-      <p>Updated every <%= tweet_refresh %> minutes. <%= link_to "See all...", "https://www.twiter.com/#{twiter_username}"%></p>
-    </span>
+    <!--"Last update at <%= last_refresh %>">-->
+  </ul>
 </div>
 <% end %>
-
-<hr />

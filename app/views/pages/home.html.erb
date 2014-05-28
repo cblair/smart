@@ -2,11 +2,11 @@
 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 <div class="row">
   <div class="row">
-    <div class="large-14 small-14 large-offset-1 small-offset-1 columns">
+    <div class="large-13 small-13 large-offset-1 small-offset-1 columns">
       <div class="rider-alerts">
         <div class="row">
            <div class="small-5 columns">
-              <%= image_tag("rider-alerts-image.png", height:296, width:317)%>
+              <%= image_tag("rider-alerts-image.png", width:190)%>
            </div>
           <div class="small-9 columns scrollable">
             <div class="home-box-content">
@@ -24,9 +24,9 @@
     <div class="large-10 small-10 large-offset-1 small-offset-1 columns">
       <div class="fixed-route">
         <div class="row">
-          <div class="small-4 columns fixed-route-label">
-            <h5>Moscow Fixed Route</h5>
-            <h5>Fare Free</h5>
+          <div class="small-5 columns fixed-route-label">
+            <h5 class="home-box-label">MOSCOW FIXED ROUTE</h5>
+            <h5 class="home-box-label">FARE FREE!</h5>
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
@@ -53,7 +53,7 @@
       <div class="dial-a-ride">
         <div class="row">
           <div class="small-4 columns dial-a-ride-label">
-           <h5>Dial a Ride</h5>
+           <h5 class="home-box-label">DIAL A RIDE</h5>
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
@@ -78,7 +78,7 @@
       <div class="inter-county">
         <div class="row">
           <div class="small-4 columns inter-county-label">
-            <h5>Inter-county Tickets</h5>
+            <h5 class="home-box-label">INTERCITY TICKETS</h5>
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
@@ -98,6 +98,6 @@
 
 <div class="slideshow-hidden">
   <% @images.each do |image| %>
-    <%= image_tag "home_banner/cropped/#{image.split('/').last}" %>
+    <%= image_tag("home_banner/cropped/#{image.split('/').last}", height:296, width:317) %>
   <% end %>
 </div>

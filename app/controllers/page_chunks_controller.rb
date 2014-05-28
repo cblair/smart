@@ -42,9 +42,10 @@ class PageChunksController < ApplicationController
   def update
     @page_chunk = PageChunk.find(params[:id])
     #TODO: Not sure why "undefined" is a key.
+    #TODO: multiple editable section on one page not working; the content for the last
+    # is always 
     @page_chunk.content = params[:content][:undefined][:value]
     @page_chunk.save!
-    debugger
 
     render text: ""
 =begin
