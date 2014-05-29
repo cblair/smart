@@ -19,6 +19,7 @@
 //= require retina_tag
 // Leaving this out per Mercury instructions.
 // require_tree .
+//= require home
 //= require home_slideshow
 
 $(function(){ $(document).foundation(); });

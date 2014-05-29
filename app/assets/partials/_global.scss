@@ -68,6 +68,10 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 	}
 }
 
+div.main-feed {
+	padding-right: 35px;
+}
+
 ul.main-nav {
 	padding-top:0px;
 	li {
@@ -118,6 +122,8 @@ ul.main-nav {
 // TODO: refactor
 ul.top-left-nav {
 	padding-top:0px;
+	line-height: 29px;
+	vertical-align: middle;
 	li {
 		background-color:#0078C1;
 		color:white;
@@ -146,6 +152,8 @@ ul.top-left-nav {
 }
 ul.top-right-nav {
 	padding-top:0px;
+	line-height: 29px;
+	vertical-align: middle;
 	li {
 		background-color:#0078C1;
 		color:white;
@@ -201,6 +209,7 @@ div.follow-us {
 	color:#58585B;
 	text-align:right;
 	vertical-align:middle;
+	padding-right: 20px;
 	.fa {
 		font-size:26px;
 	}
@@ -223,8 +232,8 @@ div.rider-alerts {
 }
 
 div.fixed-route {
-	border-color:#0370B5;
-	background:#0370B5;
+	border-color:#AA0534;
+	background:#AA0534;
 }
 div.fixed-route-label {
 	h5 {
@@ -255,9 +264,13 @@ div.inter-county-label {
 div.home-box-content {
 	background: white;
 	margin: 3px;
-	padding: 3px;
+	padding: 20px;
+	font-family: inherit;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
+	ul {
+		list-style-type: circle;
+	}
 }
 
 h5.home-box-label {
