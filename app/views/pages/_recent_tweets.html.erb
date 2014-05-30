@@ -5,13 +5,16 @@
     tweet_refresh = 15 #minutes
 %>
 
+
 <div id="recent_tweets">
 <% cache({:action => 'home', :action_suffix => 'recent_tweets'}, :expires_in => tweet_refresh.minutes) do %>
   <ul>
     <% begin %>
         <% last_refresh = Time.now() %>
         <% @twitter_client.user_timeline(twiter_username, {:count => 3}).each do |tweet| %>
-           <li><%= tweet.text %></li>
+          <% month_name = Date::MONTHNAMES[tweet.created_at.month] %>
+          <% day = tweet.created_at.day %>
+           <li><%= "#{tweet.user.name} @ #{month_name} #{day}: #{tweet.text}" %></li>
            <!--&mdash; @<%= tweet.user.screen_name %>-->
         <% end %>
         <% last_refresh = Time.now() %>
