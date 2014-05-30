@@ -2,14 +2,14 @@
 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 <div class="row main-feed">
   <div class="row">
-    <div class="large-13 small-13 large-offset-1 small-offset-1 columns">
+    <div class="large-13 small-13 large-offset-1 small-offset-1 columns rider-alerts-column">
       <div class="rider-alerts home-box">
         <div class="row">
            <div class="small-5 columns">
-              <%= image_tag("rider-alerts-image.png", width:190)%>
+              <%= image_tag("rider-alerts-image.png", width:130)%>
            </div>
           <div class="small-9 columns scrollable">
-            <div class="home-box-content rider-alerts-content">
+            <div class="rider-alerts-content">
               <%= render :partial => "pages/recent_tweets" %>
             </div>
           </div>
@@ -18,19 +18,16 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-4 small-4 large-offset-1 small-offset-1 columns">
-      <!--Grid placeholder-->
-    </div>
-    <div class="large-10 small-10 large-offset-1 small-offset-1 columns">
+    <div class="large-14 small-14 large-offset-1 small-offset-1 columns fixed-route-column">
       <div class="fixed-route home-box">
         <div class="row">
           <div class="small-5 columns fixed-route-label">
-            <h5 class="home-box-label">MOSCOW FIXED ROUTE</h5>
-            <h5 class="home-box-label">FARE FREE!</h5>
+            <%= image_tag("fixed-route.png", width:240)%>
+            <!--<h5 class="home-box-label">FARE FREE!</h5>-->
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-              <ul class="small-block-grid-2">
+              <ul class="small-block-grid-2 fixed-route">
                 <li>SCHEDULE (PDF)</li>
                 <li>HOW TO / RULES</li>
                 <li>IDAHO 511</li>
@@ -45,18 +42,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-4 small-4 large-offset-1 small-offset-1 columns">
-      <!--Grid placeholder-->
-    </div>
-    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+    <div class="large-7 small-7 columns dial-a-ride-column">
       <div class="dial-a-ride home-box">
         <div class="row">
-          <div class="small-4 columns dial-a-ride-label">
-           <h5 class="home-box-label">DIAL A RIDE</h5>
+          <div class="medium-4 columns dial-a-ride-label">
+           <%= image_tag("dial-a-ride.png", width:240)%>
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-              <ul class="small-block-grid-2">
+              <ul class="small-block-grid-2 dial-a-ride">
                 <li>GUIDE / HOW TO</li>
                 <li>ADA PRIORITY</li>
                 <li>MEDICAID</li>
@@ -64,19 +58,14 @@
               </ul>
             </div>
           </div>
-        </div>      
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-5 small-5 large-offset-1 small-offset-1 columns">
-      <!--Grid placeholder-->
-    </div>
-    <div class="large-9 small-9 large-offset-1 small-offset-1 columns">
+    <div class="large-7 small-7 columns home-box-column">
       <div class="inter-county home-box">
         <div class="row">
           <div class="small-4 columns inter-county-label">
-            <h5 class="home-box-label">INTERCITY TICKETS</h5>
+            <%= image_tag("intercity-tickets.png", width:240)%>
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
