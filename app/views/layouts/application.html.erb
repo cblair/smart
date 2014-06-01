@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row show-for-medium-up">
       <div class="medium-3 large-3 columns nav">
         <ul class="button-group top-left-nav">
           <li><%= link_to "HOME", "/", class: 'nav' %></li>
@@ -86,9 +86,36 @@
       </div>
     </div>
 
+    <div class="row hide-for-medium-up">
+      <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar data-options="sticky_on: small">
+           <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">REGIONAL PUBLIC TRANSPORTATION</a></h1>
+            </li>
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon has-dropdown"><a href="#"><span></span></a>
+                <ul class="dropdown">
+                  <li><%= link_to "HOME", "/" %></li>
+                  <li><%= link_to "ABOUT", page_path(Page.find_or_create_by(name: "about")) %></li>
+                  <li><%= link_to "DONATE", page_path(Page.find_or_create_by(name: "donate"))%></li>
+                  <li class="nav"><%= link_to "CONTACT", page_path(Page.find_or_create_by(name: "contact")) %></li>
+                  <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")) %></li>
+                  <li class="nav"><%= link_to "EMPLOYMENT", "#", class: 'nav' %></li>
+                  <% if current_user %>
+                  <li><%= link_to "NOTIFICATIONS", notifications_path %></li>
+                  <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %></li>
+                  <% end %>                  
+                </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
     <div class="row">
       <div class="medium-3 large-3 columns nav">
-        <ul class="side-nav main-nav">
+        <ul class="side-nav main-nav show-for-medium-up">
           <li class="nav"><%= link_to "CONTACT", page_path(Page.find_or_create_by(name: "contact")), class: 'nav' %></li>
           <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
           <li class="nav"><%= link_to "EMPLOYMENT", "#", class: 'nav' %></li>
