@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     #:update,
     :destroy]
 
+  before_filter :authenticate_user!, except: [:index, :show, :home]
+
   # GET /pages
   # GET /pages.json
   def index

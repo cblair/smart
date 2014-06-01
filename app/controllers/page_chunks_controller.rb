@@ -1,6 +1,8 @@
 class PageChunksController < ApplicationController
   before_action :set_page_chunk, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+
   # GET /page_chunks
   # GET /page_chunks.json
   def index
