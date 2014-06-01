@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "SMART - R2 Transit" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+<<<<<<< HEAD
+    <!-- Header -->
+    <div class="row top-header">
+      <div class="small-9 medium-9 large-9 columns top-header-text">
+         REGIONAL PUBLIC TRANSPORTATION
+=======
+    <!-- Header and Nav -->
+ 
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <h1>SMART - Transit</h1>
+
+          <ul class="button-group" align="right">
+            <li><a href="#" class="small button">Donate</a></li>
+            <li><a href="#" class="small button">About</a></li>
+            <li><a href="#" class="small button">News</a></li>
+          <!--Devise login stuff, disabled for now. Using Facebook login.
+          <% if user_signed_in? %>
+            <li>
+              Logged in as <strong><%= link_to current_user.email, edit_user_registration_path, class: "small button" %></strong>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "small button" %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign up", new_user_registration_path, class: "small button" %>
+            </li>
+            <li>
+              <%= link_to "Login", new_user_session_path, class: "small button" %>
+            </li>
+          <% end %>
+          -->
+            <!--
+            <li><a href="#" class="small button"><%= fa_icon "facebook-square" %></a></li>
+            <li><a href="#" class="small button"><%= fa_icon "twitter" %></a></li>
+            -->
+            <li>
+            <% if current_user %>
+              <%= link_to current_user.name + " (sign out)", signout_path, id: "sign_out", class: "small button" %>
+            <% else %>
+              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "small button" %>
+            <% end %>
+            </li>
+          </ul>
+
+        </div>
+>>>>>>> 8cc73cc6e66bcb273eb6765ed4822a0c0c2f121d
+      </div>
+      <div class="small-3 medium-3 large-3 columns top-header-image">
+          <%= image_tag("smart-logo.png", height:82, width:170)%>
+      </div>      
+    </div>
+    <!-- End Header -->
+
+    <!-- Header -->
+    <div class="row">
+      <div class="large-12 columns">
+<<<<<<< HEAD
+
+=======
+      <% alert_or_notice = flash[:notice] if flash[:notice] %>
+      <% alert_or_notice = flash[:alert] if flash[:alert] %>
+      <% if alert_or_notice %>
+        <div data-alert class="alert-box info">
+          <%= alert_or_notice %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% elsif flash[:error] %>
+        <div data-alert class="alert-box warning">
+          <%= flash[:error] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% elsif flash[:success] %>
+        <div data-alert class="alert-box success">
+          <%= flash[:success] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+>>>>>>> 8cc73cc6e66bcb273eb6765ed4822a0c0c2f121d
+      </div>
+    </div>
+    <!-- End Headher -->
+
+    <!-- Body -->
+    <div class="row">
+      <div class="medium-3 large-3 columns">
+        <ul class="side-nav main-nav">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">DONATE</a></li>
+          <li><a href="#">DIRECTIONS</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">SERVICE</a></li>      
+          <li><a href="#">HOW TO TRAVEL</a></li>
+          <li><a href="#">EMPLOYMENT</a></li>
+          <li><a href="#">LOGIN</a></li>                
+        </ul>
+      </div>
+      <div class="small-9 large-9 columns">
+        <div class="row">
+          <div class="small-12 follow-us">
+            FOLLOW US ON:&nbsp;&nbsp;
+            <%= fa_icon "facebook-square" %>
+            <%= fa_icon "twitter" %>
+          </div>
+          <div class="small-12">
+            <% alert_or_notice = flash[:notice] if flash[:notice] %>
+            <% alert_or_notice = flash[:alert] if flash[:alert] %>
+            <% if alert_or_notice %>
+              <div data-alert class="alert-box info">
+                <%= alert_or_notice %>
+                <a href="#" class="close">&times;</a>
+              </div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- End Body -->
+
+
+
+    
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
