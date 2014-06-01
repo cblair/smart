@@ -42,33 +42,43 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 @media #{$th-small-only} { 
 	.top-header-text {
 		font-size: 24px;
-		height:45px;
-		margin-top:45px;
+		height: 24px;
+		vertical-align: bottom;
+		line-height: 80px;
 	}
 }
 
 @media #{$th-medium-up} { 
 	.top-header-text {
 		font-size: 30px;
-		height:100px;		
-		margin-top:15px;
+		height: 30px;
+		vertical-align: bottom;
+		line-height: 100px;
 	}
 }
 @media #{$th-medium-only} { 
 	.top-header-text {
 		font-size: 30px;
-		height:100px;		
+		height: 30px;
+		vertical-align: bottom;
+		line-height: 100px;	
 	}
 }
 
 @media #{$th-large-up} { 
 	.top-header-text {
 		font-size: 42px;
+		height: 42px;
+		vertical-align: bottom;
+		line-height: 100px;
 	}
 }
 @media #{$th-large-only} { 
 	.top-header-text {
 		font-size: 42px;
+		height: 42px;
+		vertical-align: bottom;
+		line-height: 100px;
 	}
 }
 
