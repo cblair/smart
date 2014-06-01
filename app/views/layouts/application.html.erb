@@ -50,7 +50,7 @@
           <%= image_tag "home_banner/cropped/Design West_20130627_0145.jpg", class: 'top-nav slideshow' %>
           <%= image_tag "home_banner/cropped/Design West_20130627_0137.jpg", class: 'top-nav slideshow' %>
       </div>
-      <div class="medium-5 large-5   columns nav top-nav">
+      <div class="medium-5 large-5 columns nav top-nav">
           <%= image_tag "home_banner/full/Design West_20130627_0008.jpg", class: 'top-center-nav' %>
       </div>
       <div class="medium-3 large-3 columns nav top-nav">
@@ -91,8 +91,6 @@
         <ul class="side-nav main-nav">
           <li class="nav"><%= link_to "CONTACT", page_path(Page.find_or_create_by(name: "contact")), class: 'nav' %></li>
           <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
-          <li class="nav"><%= link_to "SERVICE", page_path(Page.find_or_create_by(name: "service")), class: 'nav' %></li>      
-          <li class="nav"><%= link_to "HOW TO TRAVEL", page_path(Page.find_or_create_by(name: "how-to-travel")), class: 'nav' %></li>
           <li class="nav"><%= link_to "EMPLOYMENT", "#", class: 'nav' %></li>
           <% if current_user %>
           <li><%= link_to "NOTIFICATIONS", notifications_path, class: 'nav button-logged-in' %></li>
@@ -101,7 +99,7 @@
         </ul>
 
         <p><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS:</strong></p>
-        <%= image_tag "logos/nsa.png", class: 'side-logos' %>
+        <%= image_tag "logos/nsa.jpg", class: 'side-logos', width: 140 %>
         <br />
         <%= image_tag "logos/uofi.png", class: 'side-logos' %>
         <br />
@@ -110,6 +108,8 @@
         <%= image_tag "logos/moscow.png", class: 'side-logos' %>
         <br />
         <%= image_tag "logos/united_way.png", class: 'side-logos' %>
+        <br />
+        <p style="text-align: center;"><strong>LATAH COUNTY</strong></p>
         <br />
         <%= image_tag "logos/generous_local_supporters.png", class: 'side-logos' %>
         <br />

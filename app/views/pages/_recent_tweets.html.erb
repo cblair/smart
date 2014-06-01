@@ -11,11 +11,17 @@
   <ul>
     <% begin %>
         <% last_refresh = Time.now() %>
-        <% @twitter_client.user_timeline(twiter_username, {:count => 3}).each do |tweet| %>
+        <% n = 0 %>
+        <% n_tweets_to_display = 2 %>
+        <% @twitter_client.user_timeline(twiter_username, {:count => n_tweets_to_display}).each do |tweet| %>
+          <% n += 1 %>
           <% month_name = Date::MONTHNAMES[tweet.created_at.month] %>
           <% day = tweet.created_at.day %>
-           <li><%= "#{tweet.user.name} @ #{month_name} #{day}: #{tweet.text}" %></li>
-           <!--&mdash; @<%= tweet.user.screen_name %>-->
+           <li><%= "#{tweet.user.screen_name} @ #{month_name} #{day}: #{tweet.text}" %></li>
+           <!--If this is not the last tweet, break the lines between-->
+           <% if n < n_tweets_to_display %>
+              <br />
+           <% end %>
         <% end %>
         <% last_refresh = Time.now() %>
     <% rescue => e %>

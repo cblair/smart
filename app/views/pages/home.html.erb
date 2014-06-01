@@ -5,10 +5,10 @@
     <div class="large-13 small-13 large-offset-1 small-offset-1 columns rider-alerts-column">
       <div class="rider-alerts home-box">
         <div class="row">
-           <div class="small-5 columns">
-              <%= image_tag("rider-alerts-image.png", width:130)%>
+           <div class="small-3 columns">
+              <%= image_tag("rider-alerts-image.png", width:140)%>
            </div>
-          <div class="small-9 columns scrollable">
+          <div class="small-11 columns scrollable">
             <div class="rider-alerts-content">
               <%= render :partial => "pages/recent_tweets" %>
             </div>
@@ -27,14 +27,14 @@
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-              <ul class="small-block-grid-2 fixed-route">
-                <li>SCHEDULE (PDF)</li>
-                <li>HOW TO / RULES</li>
-                <li>IDAHO 511</li>
-                <li>GOOGLE TRANSIT</li>
-                <li>BING TRANSIT</li>
-                <li>CLOSURES</li>
-              </ul>
+                <p class="home-box-center">SCHEDULE</p>
+                <p class="home-box-center">INFORMATION</p>
+                <p class="home-box-center">CLOSURES</p>
+                <div class="fixed-route-logos">
+                  <%= image_tag("logos/511.jpg", width: 100) %>
+                  <%= image_tag("logos/google_transit.gif", width: 100) %>
+                  <%= image_tag("logos/bing.png", width: 100) %>
+                </div>
             </div>
           </div>
         </div>
@@ -50,12 +50,9 @@
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-              <ul class="small-block-grid-2 dial-a-ride">
-                <li>GUIDE / HOW TO</li>
-                <li>ADA PRIORITY</li>
-                <li>MEDICAID</li>
-                <li>SCHEDULING</li>
-              </ul>
+              <p class="dial-a-ride-center">INFORMATION</p>
+              <p class="dial-a-ride-center">ADA PRIORITY</p>
+              <p class="dial-a-ride-center">MEDICAID</p>
             </div>
           </div>
         </div>
@@ -70,9 +67,7 @@
           <div class="small-8 columns">
             <div class="home-box-content">
               <ul class="small-block-grid-2">
-                <li>HOW TO / INFO</li>
-                <li>NWT</li>
-                <li>GREYHOUND</li>
+                <p class="intercity-center">INFORMATION</p>
               </ul>
             </div>
           </div>
@@ -82,8 +77,11 @@
   </div>
 </div>
 
+<!--Hidden images for replacement into sideshow-->
+<!--
 <div class="slideshow-hidden">
   <% @images.each do |image| %>
     <%= image_tag("home_banner/cropped/#{image.split('/').last}", height:296, width:317) %>
   <% end %>
 </div>
+-->

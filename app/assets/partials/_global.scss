@@ -22,7 +22,7 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 
 .top-header-text {
 	font-family: Arial;
-	color: lighten(#58585B, 20%);
+	color: lighten(#58585B, 10%);
 	position:absolute;
 	font-size: 2.70rem;
 	white-space: nowrap;
@@ -32,7 +32,10 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 	.top-header-text {
 		font-size: 18px;
 		height:45px;
-		margin-top:25px;
+
+		//margin-top:55px;
+		margin-top:15px;
+		padding-left: 3px;
 	}
 }
 
@@ -48,7 +51,7 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 	.top-header-text {
 		font-size: 30px;
 		height:100px;		
-		margin-top:55px;
+		margin-top:15px;
 	}
 }
 @media #{$th-medium-only} { 
@@ -60,12 +63,12 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 
 @media #{$th-large-up} { 
 	.top-header-text {
-		font-size: 38px;
+		font-size: 42px;
 	}
 }
 @media #{$th-large-only} { 
 	.top-header-text {
-		font-size: 38px;
+		font-size: 42px;
 	}
 }
 
@@ -84,7 +87,6 @@ ul.main-nav {
 		vertical-align: middle;
 		margin-top:0px;
 		margin-bottom:5px;
-		border-radius: 10px;
 	
 		a:link {
 			color:white;
@@ -196,7 +198,8 @@ div.nav {
 	padding-left: 5px;
 	li {
 		background-color:#0078C1;
-	}
+		border-radius: 5px;
+	}	
 }
 a.nav:visited {
 	color: white;
@@ -205,7 +208,7 @@ a.nav:visited {
 div.follow-us {
 	font:Arial;
 	font-size:14px;
-	color: lighten(#58585B, 20%);
+	color: lighten(#58585B, 10%);
 	text-align:right;
 	vertical-align:middle;
 	padding-right: 20px;
@@ -229,13 +232,17 @@ div.rider-alerts-column {
 	padding-left: 0px;
 }
 div.rider-alerts {
-	border-color:#58585B;
-	background-color: #58585B;
+	border-color:#3F3F3F;
+	background-color: #3F3F3F;
+	margin-top: 10px;
 }
 div.rider-alerts-content {
 	background: white;
 	margin: 3px;
-	padding: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 	font-family: inherit;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -243,6 +250,9 @@ div.rider-alerts-content {
 		list-style-type: circle;
 		margin-bottom: 0px;
 	}
+}
+img.rider-alerts {
+
 }
 
 div.fixed-route-column {
@@ -261,10 +271,9 @@ div.fixed-route-label {
 		padding-top: 15px;
 	}	
 }
-ul.fixed-route {
-	li {
-		padding: 25px;
-	}
+div.fixed-route-logos {
+	text-align: center;
+	padding-bottom: 20px;
 }
 
 div.dial-a-ride-column {
@@ -288,6 +297,11 @@ ul.dial-a-ride {
 		font-size: x-small;
 	}
 }
+p.dial-a-ride-center {
+	text-align: center;
+	padding-top: 5px;
+	margin-bottom: 5px;
+}
 
 div.inter-county {
 	border-color:#E4B43A;
@@ -302,18 +316,25 @@ div.inter-county-label {
 		//padding-top: 10px;
 	}
 }
+p.intercity-center {
+	text-align: center;
+	padding-top: 35px;
+	padding-bottom: 10px;
+}
 
 div.home-box-content {
 	background: white;
 	margin: 3px;
 	padding: 20px;
 	font-family: inherit;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+	border-radius: 10px;
 	ul {
 		list-style-type: circle;
 		margin-bottom: 0px;
 	}
+}
+p.home-box-center {
+	text-align: center;
 }
 
 div.home-box-column {
@@ -371,7 +392,7 @@ div.scrollable {
 div#recent_tweets {
 	ul {
 		li {
-			font-size: x-small;
+			font-size: small;
 		}
 	}
 }

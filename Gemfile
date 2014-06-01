@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#Stuff for Heroku
+gem 'rails_12factor', group: :production
+gem 'ruby', "2.1.1"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
