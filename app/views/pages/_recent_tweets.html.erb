@@ -17,7 +17,7 @@
           <% n += 1 %>
           <% month_name = Date::MONTHNAMES[tweet.created_at.month] %>
           <% day = tweet.created_at.day %>
-           <li><%= "#{tweet.user.screen_name} @ #{month_name} #{day}: #{tweet.text}" %></li>
+           <li><%= "@ #{tweet.user.screen_name} #{month_name} #{day}: #{tweet.text}" %></li>
            <!--If this is not the last tweet, break the lines between-->
            <% if n < n_tweets_to_display %>
               <br />

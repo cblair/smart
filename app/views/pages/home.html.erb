@@ -8,12 +8,19 @@
            <div class="small-3 columns">
               <%= image_tag("rider-alerts-image.png", width:140)%>
            </div>
-          <div class="small-11 columns scrollable">
+          <div class="small-11 columns scrollable rider-alerts-column">
             <div class="rider-alerts-content">
               <%= render :partial => "pages/recent_tweets" %>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-14 small-14 large-offset-1 small-offset-1 columns fixed-route-column">
+      <div class="small-14 follow-us">
+        TO RECEIVE RIDER ALERT NOTIFICATIONS, FOLLOW US ON <%= link_to fa_icon("twitter") , "https://www.twiter.com/r2transit", class: "social-media-twitter" %>, OR LIKE US ON <%= link_to fa_icon("facebook-square"), "https://www.facebook.com/pages/SMART-Transit/246944595460502", class: "social-media-facebook" %>
       </div>
     </div>
   </div>
@@ -31,7 +38,7 @@
                 <p class="home-box-center">INFORMATION</p>
                 <p class="home-box-center">CLOSURES</p>
                 <div class="fixed-route-logos">
-                  <%= image_tag("logos/511.jpg", width: 100) %>
+                  <%= image_tag("logos/511.png", width: 100) %>
                   <%= image_tag("logos/google_transit.gif", width: 100) %>
                   <%= image_tag("logos/bing.png", width: 100) %>
                 </div>
