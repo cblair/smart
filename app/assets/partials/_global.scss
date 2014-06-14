@@ -235,7 +235,7 @@ div.rider-alerts-column {
 div.rider-alerts {
 	border-color:#3F3F3F;
 	//background-color: #3F3F3F;
-	background-image: url("rider-alerts-box-bg.png");
+	background-image: image-url("rider-alerts-box-bg.png");
 	margin-top: 0px;
 }
 div.rider-alerts-label {
@@ -271,7 +271,7 @@ div.fixed-route-column {
 div.fixed-route {
 	border-color:#AA0534;
 	//background:#AA0534;
-	background-image: url("fixed-route-box-bg.png");
+	background-image: image-url("fixed-route-box-bg.png");
 	background-size: 758px 278px;
 }
 div.fixed-route-label {
@@ -299,7 +299,7 @@ div.dial-a-ride-column {
 div.dial-a-ride {
 	border-color:#679045;
 	//background:#679045;
-	background-image: url("dial-a-ride-box-bg.png");
+	background-image: image-url("dial-a-ride-box-bg.png");
 	background-size: 341px 130px;
 }
 div.dial-a-ride-label {
@@ -326,7 +326,7 @@ p.dial-a-ride-center {
 div.inter-county {
 	border-color:#E4B43A;
 	//background:#E4B43A;
-	background-image: url("intercity-tickets-box-bg.png");
+	background-image: image-url("intercity-tickets-box-bg.png");
 	background-size: 411px 129px;
 }
 div.inter-county-label {
