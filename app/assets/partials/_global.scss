@@ -26,6 +26,7 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 	position:absolute;
 	font-size: 2.70rem;
 	white-space: nowrap;
+	padding-bottom: 85px;
 }
 
 @media #{$th-mobile-up} { 
