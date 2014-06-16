@@ -91,7 +91,7 @@
         <ul class="side-nav main-nav">
           <li class="nav"><%= link_to "CONTACT", page_path(Page.find_or_create_by(name: "contact")), class: 'nav' %></li>
           <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
-          <li class="nav"><%= link_to "EMPLOYMENT", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
+          <li class="nav"><%= link_to "EMPLOYMENT", page_path(Page.find_or_create_by(name: "employment")), class: 'nav' %></li>
           <% if current_user %>
           <li><%= link_to "EDIT THIS USER", edit_user_registration_path, class: 'nav button-logged-in' %></li>
           <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'nav button-logged-in' %></li>
