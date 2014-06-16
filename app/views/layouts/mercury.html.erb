@@ -6,6 +6,12 @@
     <title>Mercury Editor</title>
     <%= stylesheet_link_tag    'mercury' %>
     <%= javascript_include_tag 'application', 'mercury' %>
+    <!--Mercury - fix for tiny window issue for SMART.-->
+    <style type="text/css">
+      iframe#mercury_iframe {
+        min-height: 800px;
+      }
+    </style>
   </head>
   <body>
   <div id="mercury-save-url" data-save-url="<%= params %>"></div>
