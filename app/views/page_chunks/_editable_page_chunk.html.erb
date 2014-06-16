@@ -1,10 +1,13 @@
 <div class="content">
-  <div class="page-chunk-content mercury-region" data-mercury="full" contenteditable="true" data-save-url="<%= page_chunk_path(page_chunk) %>">
-    <%= raw page_chunk.content %>
-  </div>
-
   <!--PageChunk name: <%= page_chunk.name %>-->
   <% if current_user %>
-  <p><%= link_to "Edit HTML", "/editor" + request.path + "?page_chunk_id=#{page_chunk.id}", id: "edit_link", data: {save_url: page_chunk_path(page_chunk)} %></p>
+      <div class="page-chunk-content mercury-region" data-mercury="full" contenteditable="true" data-save-url="<%= page_chunk_path(page_chunk) %>">
+        <%= raw page_chunk.content %>
+      </div>
+      <p><%= link_to "Edit HTML", "/editor" + request.path + "?page_chunk_id=#{page_chunk.id}", id: "edit_link", data: {save_url: page_chunk_path(page_chunk)} %></p>
+  <% else %>
+    <div>
+        <%= raw page_chunk.content %>
+    </div>
   <% end %>
 </div>
