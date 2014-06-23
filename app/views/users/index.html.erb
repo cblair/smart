@@ -1,0 +1,24 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>email</th>
+      <th>Approved?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td>
+          <%= form_for(user) do |f| %>
+            <%= f.check_box(:approved, {:checked => user.approved}) %>
+            <%= f.submit 'Update' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -7,7 +7,19 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :confirmable
 
-   def self.from_omniauth(auth)
+  def active_for_authentication?
+    super && approved? 
+  end 
+
+  def inactive_message 
+    if !approved? 
+      :not_approved 
+    else 
+      super # Use whatever other message 
+    end 
+  end
+
+  def self.from_omniauth(auth)
      where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
        user.provider = auth.provider
        user.uid = auth.uid
@@ -16,5 +28,5 @@ class User < ActiveRecord::Base
        user.oauth_expires_at = Time.at(auth.credentials.expires_at)
        user.save!
      end
-   end
+  end
 end

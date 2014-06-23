@@ -1,5 +1,8 @@
 Smart::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  get '/users', to: "users#index"
+  patch '/user/:id(.:format)' => "users#update", as: :user
+
   get '/login', to: redirect('/users/login')
   get '/logout', to: redirect('/users/logout')
 
