@@ -25,12 +25,14 @@
   <body>
     <!-- Header -->
     <div class="row top-header">
-      <div class="small-14 medium-14 large-14 columns top-header-text show-for-medium-up" style="position:relative">
-         <%= image_tag("smart-logo.png", height:82, width:996, style: "position: absolute; right: 0px;min-width:996px;")%>
+      <div class="small-14 medium-14 large-14 columns top-header-text" style="position:relative">
+        <div class="show-for-medium-up">
+           <%= image_tag("smart-logo.png", height:82, width:996, style: "position: absolute; right: 0px;min-width:996px;")%>
+         </div>
          <div style="position:absolute;left:0;top:0;padding-top:50px;">
            REGIONAL PUBLIC TRANSPORTATION
          </div>
-      </div>      
+      </div>
     </div>
     <!-- End Header -->
 
@@ -92,24 +94,25 @@
           <li class="nav"><%= link_to "CONTACT", page_path(Page.find_or_create_by(name: "contact")), class: 'nav' %></li>
           <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
           <li class="nav"><%= link_to "EMPLOYMENT", page_path(Page.find_or_create_by(name: "employment")), class: 'nav' %></li>
+          <li class="nav"><%= link_to "USEFUL LINKS", page_path(Page.find_or_create_by(name: "useful links")), class: 'nav' %></li>
           <% if current_user %>
           <li><%= link_to "EDIT THIS USER", edit_user_registration_path, class: 'nav button-logged-in' %></li>
           <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'nav button-logged-in' %></li>
           <% end %>
         </ul>
 
-        <p><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS:</strong></p>
-        <%= image_tag "logos/dot.png", class: 'side-logos', width: 60 %>
+        <p id="services"><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS: </strong></p>
+        <%= image_tag "logos/dot.png", class: 'side-logos' %>
         <br />
         <%= image_tag "logos/idot.png", class: 'side-logos' %>
         <br />
         <%= image_tag "logos/moscow.png", class: 'side-logos' %>
         <br />
-        <%= image_tag "logos/uofi.jpg", class: 'side-logos', width: 100 %>
+        <%= image_tag "logos/uofi.jpg", class: 'side-logos' %>
         <br />
-        <%= image_tag "logos/nsa.jpg", class: 'side-logos', width: 100 %>
+        <%= image_tag "logos/nsa.jpg", class: 'side-logos' %>
         <br />
-        <%= image_tag "logos/united_way.png", class: 'side-logos', width: 100 %>
+        <%= image_tag "logos/united_way.png", class: 'side-logos' %>
         <br />
         <%= image_tag "logos/generous_local_supporters.png", class: 'side-logos' %>
         <br />

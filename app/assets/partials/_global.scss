@@ -15,6 +15,15 @@ $th-medium-only: "#{$screen} and (min-width:#{lower-bound($my-medium-range)}) an
 $th-large-up: "#{$screen} and (min-width:#{lower-bound($my-large-range)})" !default;
 $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and (max-width:#{upper-bound($my-large-range)})" !default;
 
+//SMART wants Calibri for all elements.
+*{font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;}
+
+/*
+div.row {
+	background-color: #DBD7CD;
+}
+*/
+
 .top-header {
 	padding-top:10px;
 	padding-bottom:10px;
@@ -22,7 +31,7 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 
 .top-header-text {
 	font-family: Arial;
-	color: lighten(#58585B, 10%);
+	color: lighten(#58585B, 5%);
 	position:absolute;
 	font-size: 2.70rem;
 	white-space: nowrap;
@@ -103,6 +112,10 @@ ul.main-nav {
 			color: white;
 		}
 	}
+}
+
+p#services {
+	text-align: center;
 }
 
 //Home header nav buttons.
@@ -210,7 +223,7 @@ a.nav:visited {
 div.follow-us {
 	font:Arial;
 	font-size:14px;
-	color: lighten(#58585B, 10%);
+	color: lighten(#58585B, 5%);
 	text-align:right;
 	vertical-align:middle;
 	//padding-right: 20px;
@@ -292,6 +305,11 @@ div.fixed-route-logos {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+}
+img.fare-free {
+	position: absolute;
+	top: 100px;
+	left: -70px;
 }
 
 div.dial-a-ride-column {
