@@ -94,7 +94,8 @@ div.main-feed {
 ul.main-nav {
 	padding-top:0px;
 	li {
-		background-color:#58585B;
+		background-color:#0078C1;
+		border-radius: 5px;
 		color:white;
 		font-family:Arial;
 		font-size:14px;
@@ -133,6 +134,7 @@ ul.top-left-nav {
 	vertical-align: middle;
 	li {
 		background-color:#0078C1;
+		border-radius: 5px;
 		color:white;
 		font-family:Arial;
 		font-size:14px;
@@ -163,6 +165,7 @@ ul.top-right-nav {
 	vertical-align: middle;
 	li {
 		background-color:#0078C1;
+		border-radius: 5px;
 		color:white;
 		font-family:Arial;
 		font-size:14px;
@@ -218,10 +221,6 @@ div.nav {
 	padding-right: 5px;
 	padding-bottom: 0px;
 	padding-left: 5px;
-	li {
-		background-color:#0078C1;
-		border-radius: 5px;
-	}	
 }
 a.nav:visited {
 	color: white;
