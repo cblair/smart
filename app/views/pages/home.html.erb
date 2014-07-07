@@ -36,8 +36,8 @@
           <div class="small-8 columns">
             <div class="home-box-content">
                 <p class="home-box-center">SCHEDULE</p>
-                <p class="home-box-center">INFORMATION</p>
-                <p class="home-box-center">CLOSURES</p>
+                <p class="home-box-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Fixed Route")) %></p>
+                <p class="home-box-center"><%= link_to "CLOSURES", page_path(Page.find_or_create_by(name: "news")) %></p>
                 <div class="fixed-route-logos">
                   <%= image_tag("logos/511.png", width: 50) %>
                   <%= image_tag("logos/google_transit.gif", width: 100) %>
@@ -58,9 +58,9 @@
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-              <p class="dial-a-ride-center">INFORMATION</p>
-              <p class="dial-a-ride-center">ADA PRIORITY</p>
-              <p class="dial-a-ride-center">MEDICAID</p>
+              <p class="dial-a-ride-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Dial-A-Ride")) %></p>
+              <p class="dial-a-ride-center"><%= link_to "ADA PRIORITY", page_path(Page.find_or_create_by(name: "ADA Priority Paratransit")) %></p>
+              <p class="dial-a-ride-center"><%= link_to "MEDICAID", page_path(Page.find_or_create_by(name: "Medicaid")) %></p>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
           <div class="small-8 columns">
             <div class="home-box-content">
               <ul class="small-block-grid-2">
-                <p class="intercity-center">INFORMATION</p>
+                <p class="intercity-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Intercity Tickets")) %></p>
               </ul>
             </div>
           </div>
