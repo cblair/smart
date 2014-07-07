@@ -18,11 +18,17 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 //SMART wants Calibri for all elements.
 *{font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;}
 
-/*
-div.row {
+div.nav, div.home-body {
 	background-color: #DBD7CD;
 }
-*/
+
+div.side-nav {
+	min-height: 720px;
+}
+
+div#content-body {
+	background-color: #DBD7CD;
+}
 
 .top-header {
 	padding-top:10px;
@@ -36,6 +42,7 @@ div.row {
 	font-size: 2.70rem;
 	white-space: nowrap;
 	padding-bottom: 85px;
+	//background-color: #DBD7CD;
 }
 
 @media #{$th-mobile-up} { 
@@ -448,6 +455,7 @@ p.latah-county-logo {
 div.home-body {
 	padding-left: 0px;
 	padding-right: 0px;
+	min-height: 720px;
 }
 
 div.alert-box {
