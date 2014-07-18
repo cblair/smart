@@ -64,6 +64,7 @@ $em-base: 16px !default;
 $default-float: left;
 
 // $body-bg: #fff;
+//$body-bg: image-url('frosty.jpg');
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
@@ -72,7 +73,7 @@ $body-font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-seri
 
 // Font-smoothing
 
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // Text direction settings
 

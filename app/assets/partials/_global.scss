@@ -18,6 +18,14 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 //SMART wants Calibri for all elements.
 *{font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;}
 
+body {
+  background: image-url('frosty.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 div.nav, div.home-body {
 	background-color: #DBD7CD;
 }
@@ -31,8 +39,12 @@ div#content-body {
 }
 
 .top-header {
-	padding-top:10px;
 	padding-bottom:10px;
+
+	background-color: rgb(206, 203, 203);
+	opacity: .7;
+	border-radius: 8px 8px 0 0;
+	margin-top: 20px;
 }
 
 .top-header-text {
