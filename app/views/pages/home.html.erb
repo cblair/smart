@@ -35,13 +35,19 @@
           </div>
           <div class="small-8 columns">
             <div class="home-box-content">
-                <p class="home-box-center">SCHEDULE</p>
+                <p class="home-box-center"><%= link_to "SCHEDULE", "/files/schedule.pdf" %></p>
                 <p class="home-box-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Fixed Route")) %></p>
                 <p class="home-box-center"><%= link_to "CLOSURES", page_path(Page.find_or_create_by(name: "news")) %></p>
                 <div class="fixed-route-logos">
-                  <%= image_tag("logos/511.png", width: 50) %>
-                  <%= image_tag("logos/google_transit.gif", width: 100) %>
-                  <%= image_tag("logos/bing.png", width: 100) %>
+                  <a class="img-link" href="http://hb.transit.idaho.gov/main.jsf?view=rpt">
+                    <%= image_tag("logos/511.png", width: 50) %>
+                    </a>
+                  <a class="img-link" href="http://maps.google.com/intl/en/landing/transit/#mdy">
+                    <%= image_tag("logos/google_transit.gif", width: 100) %>
+                    </a>
+                  <a class="img-link" href="http://www.bing.com/maps/transitdefault.aspx">
+                    <%= image_tag("logos/bing.png", width: 100) %>
+                    </a>
                 </div>
             </div>
           </div>

@@ -472,3 +472,14 @@ div.home-body {
 div.alert-box {
 	max-width: 720px;
 }
+
+a.img-link {
+	&:hover {
+		text-decoration:none;
+		background-color: white;
+	}
+	&:visited {
+		text-decoration:none;
+		background-color: white;
+	}
+}
