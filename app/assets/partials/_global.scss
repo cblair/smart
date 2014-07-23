@@ -59,7 +59,8 @@ div#content-body {
 
 @media #{$th-mobile-up} { 
 	.top-header-text {
-		font-size: 18px;
+		//font-size: 18px;
+		font-size: 30px;
 		height:45px;
 
 		//margin-top:55px;
@@ -97,6 +98,13 @@ div#content-body {
 		font-size: 42px;
 		height: 42px;
 	}
+}
+
+div.top-header-label {
+	position:absolute;
+	left:0;
+	top:0;
+	padding-top:50px;
 }
 
 div.main-feed {
@@ -358,6 +366,7 @@ p.dial-a-ride-center {
 	text-align: center;
 	padding-top: 5px;
 	margin-bottom: 5px;
+	word-wrap: break-word;
 }
 
 div.inter-county {

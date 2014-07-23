@@ -17,6 +17,10 @@
   	<title><%= content_for?(:title) ? yield(:title) : "SMART - R2 Transit" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
+    <style type="text/css" media="print">
+      .no-print
+      { display: none; }
+    </style>
     <%= javascript_include_tag "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -26,10 +30,10 @@
     <!-- Header -->
     <div class="row top-header">
       <div class="small-14 medium-14 large-14 columns top-header-text" style="position:relative">
-        <div class="show-for-medium-up">
+        <div class="show-for-medium-up no-print">
            <%= image_tag("smart-logo.png", height:82, width:996, style: "position: absolute; right: 0px;min-width:996px;")%>
          </div>
-         <div style="position:absolute;left:0;top:0;padding-top:50px;">
+         <div class="top-header-label">
            REGIONAL PUBLIC TRANSPORTATION
          </div>
       </div>
@@ -46,7 +50,7 @@
 
     <!-- Body -->
 
-    <div class="row show-for-medium-up">
+    <div class="row show-for-medium-up no-print">
       <div class="medium-3 large-3 columns nav">
           <%= image_tag "home_banner/404 for smart website (b&w).png", class: 'top-nav-large slideshow' %>
       </div>
