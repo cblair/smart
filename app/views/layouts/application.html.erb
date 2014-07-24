@@ -20,6 +20,10 @@
     <style type="text/css" media="print">
       .no-print
       { display: none; }
+
+      .main-nav {
+        margin-top: 60px;
+      }
     </style>
     <%= javascript_include_tag "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -30,7 +34,7 @@
     <!-- Header -->
     <div class="row top-header">
       <div class="small-14 medium-14 large-14 columns top-header-text" style="position:relative">
-        <div class="show-for-medium-up no-print">
+        <div class="">
            <%= image_tag("smart-logo.png", height:82, width:996, style: "position: absolute; right: 0px;min-width:996px;")%>
          </div>
          <div class="top-header-label">
@@ -67,7 +71,13 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row show-for-medium-up no-print" id="design-west-credit">
+      <div class="medium-5 large-5 columns small-offset-3 medium-offset-3 large-offset-3">
+          <p id="design-west-credit">Some photos provided by Design West Architects</p>
+      </div>
+    </div>
+
+    <div class="row main-nav">
       <div class="medium-3 large-3 columns nav">
         <ul class="button-group top-left-nav">
           <li><%= link_to "HOME", "/", class: 'nav' %></li>
@@ -103,21 +113,23 @@
           <% end %>
         </ul>
 
-        <p id="services"><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS: </strong></p>
-        <%= image_tag "logos/dot.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/idot.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/moscow.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/uofi.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/nsa.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/united_way.png", class: 'side-logos' %>
-        <br />
-        <%= image_tag "logos/generous_local_supporters.png", class: 'side-logos' %>
-        <br />
+        <div class="show-for-medium-up no-print">
+          <p id="services"><strong>SERVICES MADE POSSIBLE BY THESE PARTNERS: </strong></p>
+          <%= image_tag "logos/dot.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/idot.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/moscow.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/uofi.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/nsa.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/united_way.png", class: 'side-logos' %>
+          <br />
+          <%= image_tag "logos/generous_local_supporters.png", class: 'side-logos' %>
+          <br />
+        </div>
       </div>
       <div class="small-11 large-11 columns home-body">
         <div class="row">
@@ -146,6 +158,12 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row" id="footer">
+      <div class="small-5 columns footer-left"><p><%= link_to "Site map", pages_path %></p></div>
+      <div class="small-4 columns footer-center"><p>Webmaster: <%= link_to "smart@smarttransit.org", "mailto:smart@smarttransit.org" %></p></div>
+      <div class="small-5 columns footer-right"><%= link_to "Get Adobe Reader", "http://get.adobe.com/reader/" %></div>
     </div>
 
     <!-- End Body -->

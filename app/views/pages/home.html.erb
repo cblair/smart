@@ -28,16 +28,16 @@
     <div class="large-14 small-14 large-offset-1 small-offset-1 columns fixed-route-column">
       <div class="fixed-route home-box">
         <div class="row">
-          <div class="small-5 columns fixed-route-label">
+          <div class="medium-5 columns fixed-route-label show-for-medium-up">
             <%= image_tag("fixed-route.png", width:240)%>
             <%= image_tag("fare-free.png", class: "fare-free")%>
             <!--<h5 class="home-box-label">FARE FREE!</h5>-->
           </div>
-          <div class="small-8 columns">
+          <div class="small-14 medium-8 columns">
             <div class="home-box-content">
                 <p class="home-box-center"><%= link_to "SCHEDULE", "/files/schedule.pdf" %></p>
                 <p class="home-box-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Fixed Route")) %></p>
-                <p class="home-box-center"><%= link_to "CLOSURES", page_path(Page.find_or_create_by(name: "news")) %></p>
+                <p class="home-box-center"><%= link_to "CLOSURES", page_path(Page.find_or_create_by(name: "closures")) %></p>
                 <div class="fixed-route-logos">
                   <a class="img-link" href="http://hb.transit.idaho.gov/main.jsf?view=rpt">
                     <%= image_tag("logos/511.png", width: 50) %>
@@ -59,10 +59,10 @@
     <div class="large-7 small-7 columns dial-a-ride-column">
       <div class="dial-a-ride home-box">
         <div class="row">
-          <div class="medium-4 columns dial-a-ride-label">
+          <div class="medium-4 columns dial-a-ride-label show-for-medium-up">
            <%= image_tag("dial-a-ride.png", width:240)%>
           </div>
-          <div class="small-8 columns">
+          <div class="small-14 medium-8 columns">
             <div class="home-box-content">
               <p class="dial-a-ride-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Dial-A-Ride")) %></p>
               <p class="dial-a-ride-center"><%= link_to "ADA PRIORITY", page_path(Page.find_or_create_by(name: "ADA Priority Paratransit")) %></p>
@@ -75,10 +75,10 @@
     <div class="large-7 small-7 columns home-box-column">
       <div class="inter-county home-box">
         <div class="row">
-          <div class="small-4 columns inter-county-label">
+          <div class="medium-4 columns inter-county-label show-for-medium-up">
             <%= image_tag("intercity-tickets.png", width:240)%>
           </div>
-          <div class="small-8 columns">
+          <div class="small-14 medium-8 columns">
             <div class="home-box-content">
               <ul class="small-block-grid-2">
                 <p class="intercity-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Intercity Tickets")) %></p>

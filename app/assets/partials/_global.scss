@@ -19,23 +19,64 @@ $th-large-only: "#{$screen} and (min-width:#{lower-bound($my-large-range)}) and 
 *{font-family: 'istok web', sans-serif;}
 
 body {
-  background: image-url('frosty.jpg');
+  //background: image-url('frosty.jpg');
+  background: image-url('page_bg.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+div#footer {
+	background-color: #EDEFF8;
+	& > p {
+		text-align: center;
+		font-family: 'istok web', sans-serif;
+		font-size: x-small;
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+
+div#design-west-credit {
+	background-color: #EDEFF8;
+}
+
+p#design-west-credit {
+	font-size: xx-small;
+	margin: 0;
+}
+
+div.footer-left {
+	text-align: right;
+}
+
+div.footer-center {
+	text-align: center;
+}
+
+div.footer-right {
+	text-align: left;
 }
 
 div.nav, div.home-body {
-	background-color: #DBD7CD;
+	background-color: #EDEFF8;
 }
 
-div.side-nav {
-	min-height: 720px;
+@media #{$th-medium-up} {
+	div.side-nav {
+		min-height: 720px;
+	}
 }
 
 div#content-body {
-	background-color: #DBD7CD;
+	background-color: #EDEFF8;
+}
+
+.panel {
+	background-color: #E0E2EB;
 }
 
 .top-header {
@@ -54,13 +95,13 @@ div#content-body {
 	font-size: 2.70rem;
 	white-space: nowrap;
 	padding-bottom: 85px;
-	//background-color: #DBD7CD;
+	//background-color: #EDEFF8;
 }
 
 @media #{$th-mobile-up} { 
 	.top-header-text {
 		//font-size: 18px;
-		font-size: 30px;
+		font-size: 24px;
 		height:45px;
 
 		//margin-top:55px;
@@ -71,7 +112,8 @@ div#content-body {
 
 @media #{$th-small-only} { 
 	.top-header-text {
-		font-size: 24px;
+		//font-size: 24px;
+		font-size: 30px;
 	}
 }
 
@@ -82,7 +124,8 @@ div#content-body {
 }
 @media #{$th-medium-only} { 
 	.top-header-text {
-		font-size: 30px;
+		//font-size: 30px;
+		font-size: 37px;
 		height: 30px;
 	}
 }
