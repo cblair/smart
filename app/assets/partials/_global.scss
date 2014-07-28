@@ -53,6 +53,11 @@ p#design-west-credit {
 div.footer-left {
 	text-align: right;
 }
+@media #{$th-mobile-up} {
+	div.footer-left {
+		text-align: center;
+	}
+}
 
 div.footer-center {
 	text-align: center;
@@ -60,6 +65,11 @@ div.footer-center {
 
 div.footer-right {
 	text-align: left;
+}
+@media #{$th-mobile-up} {
+	div.footer-right {
+		text-align: center;
+	}	
 }
 
 div.nav, div.home-body {
@@ -102,7 +112,7 @@ div#content-body {
 @media #{$th-mobile-up} { 
 	.top-header-text {
 		//font-size: 18px;
-		font-size: 24px;
+		font-size: 16px;
 		height:45px;
 
 		//margin-top:55px;
