@@ -93,8 +93,7 @@ div#content-body {
 .top-header {
 	padding-bottom:10px;
 
-	background-color: rgb(206, 203, 203);
-	opacity: .7;
+	background-color: rgba(206, 203, 203, .7);
 	border-radius: 8px 8px 0 0;
 	margin-top: 20px;
 }
@@ -107,6 +106,9 @@ div#content-body {
 	white-space: nowrap;
 	padding-bottom: 85px;
 	//background-color: #EDEFF8;
+	img {
+		opacity: 1.0;
+	}
 }
 
 @media #{$th-mobile-up} { 
@@ -464,9 +466,9 @@ div.home-box-column {
 	padding-right: 20px;
 }
 
-h5.home-box-label {
-	font-family: inherit;
-	font-size: x-large;
+.home-box-label {
+	text-align: center;
+	color: white;
 }
 
 a.button-logged-in {

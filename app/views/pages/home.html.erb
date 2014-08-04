@@ -31,9 +31,11 @@
           <div class="medium-5 columns fixed-route-label show-for-medium-up">
             <%= image_tag("fixed-route.png", width:240)%>
             <%= image_tag("fare-free.png", class: "fare-free")%>
-            <!--<h5 class="home-box-label">FARE FREE!</h5>-->
           </div>
           <div class="small-14 medium-8 columns">
+            <div class="show-for-small-only">
+              <h4 class="home-box-label">MOSCOW FIXED ROUTE</h4>
+            </div>
             <div class="home-box-content">
                 <p class="home-box-center"><%= link_to "SCHEDULE", "/files/schedule.pdf" %></p>
                 <p class="home-box-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Fixed Route")) %></p>
@@ -63,6 +65,9 @@
            <%= image_tag("dial-a-ride.png", width:240)%>
           </div>
           <div class="small-14 medium-8 columns">
+            <div class="show-for-small-only">
+              <h4 class="home-box-label">DIAL-A-RIDE</h4>
+            </div>
             <div class="home-box-content">
               <p class="dial-a-ride-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Dial-A-Ride")) %></p>
               <p class="dial-a-ride-center"><%= link_to "ADA PRIORITY", page_path(Page.find_or_create_by(name: "ADA Priority Paratransit")) %></p>
@@ -79,6 +84,9 @@
             <%= image_tag("intercity-tickets.png", width:240)%>
           </div>
           <div class="small-14 medium-8 columns">
+            <div class="show-for-small-only">
+              <h4 class="home-box-label">INTERCITY TICKETS</h4>
+            </div>
             <div class="home-box-content">
               <ul class="small-block-grid-2">
                 <p class="intercity-center"><%= link_to "INFORMATION", page_path(Page.find_or_create_by(name: "Intercity Tickets")) %></p>
