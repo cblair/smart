@@ -42,7 +42,9 @@ div#footer {
 }
 
 div#design-west-credit {
-	background-color: #EDEFF8;
+	//background-color: #EDEFF8;
+	background-color: rgba(206, 203, 203, .7);
+	height: 26px;
 }
 
 p#design-west-credit {
@@ -72,7 +74,10 @@ div.footer-right {
 	}	
 }
 
-div.nav, div.home-body {
+div.top-nav {
+	background-color: rgba(206, 203, 203, .7);
+}
+div.home-body {
 	background-color: #EDEFF8;
 }
 
@@ -165,6 +170,13 @@ div.top-header-label {
 
 div.main-feed {
 	padding-right: 35px;
+}
+
+div.main-nav {
+	background-color: #EDEFF8;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-top: -4px;
 }
 
 ul.main-nav {
@@ -479,6 +491,11 @@ img.side-logos {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+img.side-logos-square {
+    height: 60px;
+    //width: 60px;
 }
 
 blockquote {

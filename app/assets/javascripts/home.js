@@ -9,12 +9,19 @@ jQuery(function($) {
         $("div.home-box").hover(
             //On.
             function() {
-                //$(this).find('div.home-box-content').fadeIn(500);
-                $(this).find('div.home-box-content').animate({opacity: 100}, 500);
+                var home_box_content = $(this).find('div.home-box-content');
+                home_box_content.animate({opacity: 100}, 500);
+
+                //TODO: Enable links.
+                //home_box_content.find('a.box-link').unbind('click');
             //Off.
             }, function() {
-                //$(this).find('div.home-box-content').fadeOut(500);
-                $(this).find('div.home-box-content').animate({opacity: 0}, 500);
+                var home_box_content = $(this).find('div.home-box-content');
+                home_box_content.animate({opacity: 0}, 500);
+
+                //TODO: Disable links.
+                //console.log(home_box_content.find('a.box-link'));
+                //home_box_content.find('a.box-link').click(function () {return false;});
             }
         );
     });
