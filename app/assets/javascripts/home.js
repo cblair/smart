@@ -12,16 +12,15 @@ jQuery(function($) {
                 var home_box_content = $(this).find('div.home-box-content');
                 home_box_content.animate({opacity: 100}, 500);
 
-                //TODO: Enable links.
-                //home_box_content.find('a.box-link').unbind('click');
+                //Enable links.
+                home_box_content.find('a.box-link').bind('click', function (e) {});
             //Off.
             }, function() {
                 var home_box_content = $(this).find('div.home-box-content');
                 home_box_content.animate({opacity: 0}, 500);
 
-                //TODO: Disable links.
-                //console.log(home_box_content.find('a.box-link'));
-                //home_box_content.find('a.box-link').click(function () {return false;});
+                //Disable links.
+                home_box_content.find('a.box-link').bind('click', function (e) {console.log(this); e.preventDefault();});
             }
         );
     });
