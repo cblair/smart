@@ -13,14 +13,16 @@ jQuery(function($) {
                 home_box_content.animate({opacity: 100}, 500);
 
                 //Enable links.
-                home_box_content.find('a.box-link').bind('click', function (e) {});
+                //TODO: doesn't work in Firefox.
+                //home_box_content.find('a.box-link').bind('click', function (e) {});
             //Off.
             }, function() {
                 var home_box_content = $(this).find('div.home-box-content');
                 home_box_content.animate({opacity: 0}, 500);
 
                 //Disable links.
-                home_box_content.find('a.box-link').bind('click', function (e) {console.log(this); e.preventDefault();});
+                //TODO: doesn't work in Firefox.
+                //home_box_content.find('a.box-link').bind('click', function (e) {console.log(this); e.preventDefault();});
             }
         );
     });
