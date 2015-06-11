@@ -22,3 +22,7 @@
  *= require mercury/mercury
  */
 
+/* SMART - the modal width is being set too small by modal.css, hard override.*/
+.mercury-modal {
+    width: inherit !important;
+}
