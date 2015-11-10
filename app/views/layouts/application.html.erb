@@ -109,6 +109,15 @@
           <li class="nav"><%= link_to "DIRECTIONS", page_path(Page.find_or_create_by(name: "directions")), class: 'nav' %></li>
           <li class="nav"><%= link_to "EMPLOYMENT", page_path(Page.find_or_create_by(name: "employment")), class: 'nav' %></li>
           <li class="nav"><%= link_to "USEFUL LINKS", page_path(Page.find_or_create_by(name: "useful links")), class: 'nav' %></li>
+          <li id="google_translate_element" class="nav">
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+              }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          </li>
           <% if current_user %>
           <li><%= link_to "EDIT THIS USER", edit_user_registration_path, class: 'nav button-logged-in' %></li>
           <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'nav button-logged-in' %></li>
